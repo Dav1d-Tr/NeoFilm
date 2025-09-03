@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Avatar",
+    "year": 2009,
+    "director": "James Cameron",
+    "poster": "https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "director": "Anthony y Joe Russo",
+    "poster": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Titanic",
+    "year": 1997,
+    "director": "James Cameron",
+    "poster": "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Star Wars: The Force Awakens",
+    "year": 2015,
+    "director": "J.J. Abrams",
+    "poster": "https://m.media-amazon.com/images/I/8104RMlgxWL._AC_SY879_.jpg"
+  }
+]
