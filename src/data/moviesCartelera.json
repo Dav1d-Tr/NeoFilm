@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "titulo": "El Viaje de los Sueños",
+    "genero": ["Aventura", "Fantasía"],
+    "duracion": 125,
+    "clasificacion": "PG-13",
+    "sinopsis": "Un joven descubre un mundo mágico mientras busca a su hermano perdido.",
+    "imagen": "https://image.tmdb.org/t/p/w500/2lECpi35Hnbpa4y46JX0aY3AWTy.jpg",
+    "horarios": ["12:00", "15:30", "19:00", "21:30"]
+  },
+  {
+    "id": 2,
+    "titulo": "Cyber Rescate",
+    "genero": ["Ciencia Ficción", "Acción"],
+    "duracion": 110,
+    "clasificacion": "PG-13",
+    "sinopsis": "Un equipo de hackers debe salvar la ciudad de un virus que controla la tecnología.",
+    "imagen": "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+    "horarios": ["13:00", "16:00", "20:00", "22:30"]
+  },
+  {
+    "id": 3,
+    "titulo": "Amor entre Sombras",
+    "genero": ["Romance", "Drama"],
+    "duracion": 98,
+    "clasificacion": "PG",
+    "sinopsis": "Dos almas gemelas se encuentran en circunstancias imposibles y luchan por su amor.",
+    "imagen": "https://pics.filmaffinity.com/Amor_entre_sombras-895239833-large.jpg",
+    "horarios": ["11:30", "14:30", "18:00", "20:45"]
+  },
+  {
+    "id": 4,
+    "titulo": "La Última Frontera",
+    "genero": ["Acción", "Thriller"],
+    "duracion": 132,
+    "clasificacion": "R",
+    "sinopsis": "Un exsoldado busca justicia mientras enfrenta una red criminal internacional.",
+    "imagen": "https://m.media-amazon.com/images/S/pv-target-images/61cd751fa24ae50aa6fc1d4670aab4eb437c5360de539138ab941c120f4025dd.jpg",
+    "horarios": ["12:15", "15:45", "19:15", "22:00"]
+  },
+  {
+    "id": 5,
+    "titulo": "Risas y Pastel",
+    "genero": ["Comedia", "Familia"],
+    "duracion": 95,
+    "clasificacion": "G",
+    "sinopsis": "Una divertida confusión en una pastelería hace que una familia viva momentos inolvidables.",
+    "imagen": "https://pics.filmaffinity.com/Rosas_rojas-651899273-large.jpg",
+    "horarios": ["10:30", "13:00", "16:00", "18:30"]
+  },
+  {
+    "id": 6,
+    "titulo": "Ecos del Pasado",
+    "genero": ["Suspense", "Misterio"],
+    "duracion": 120,
+    "clasificacion": "PG-13",
+    "sinopsis": "Una periodista descubre secretos de su ciudad que ponen su vida en peligro.",
+    "imagen": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
+    "horarios": ["14:00", "17:00", "20:00", "22:30"]
+  },
+  {
+    "id": 7,
+    "titulo": "Noche de Demonios",
+    "genero": ["Terror"],
+    "duracion": 104,
+    "clasificacion": "R",
+    "sinopsis": "Un grupo de amigos invoca sin querer a un espíritu maligno en una vieja mansión.",
+    "imagen": "https://image.tmdb.org/t/p/original/wD4eLIHUaTvrXQqAzlfduHQ1NYg.jpg",
+    "horarios": ["21:00", "23:30"]
+  },
+  {
+    "id": 8,
+    "titulo": "La Carrera Imposible",
+    "genero": ["Acción", "Deporte"],
+    "duracion": 112,
+    "clasificacion": "PG-13",
+    "sinopsis": "Pilotos de distintas partes del mundo compiten en una carrera clandestina llena de riesgos.",
+    "imagen": "https://pics.filmaffinity.com/ford_v_ferrari-929107889-large.jpg",
+    "horarios": ["12:30", "16:00", "19:00", "22:00"]
+  },
+  {
+    "id": 9,
+    "titulo": "Pequeños Gigantes",
+    "genero": ["Animación", "Aventura"],
+    "duracion": 88,
+    "clasificacion": "G",
+    "sinopsis": "Un grupo de insectos forma un equipo para salvar su bosque de la deforestación.",
+    "imagen": "https://m.media-amazon.com/images/M/MV5BYzdlN2Q4OWMtNzE0My00NWFlLWEzYzQtYjljMWI2OTUxMDQ1XkEyXkFqcGc@._V1_.jpg",
+    "horarios": ["10:00", "12:15", "14:45", "17:30"]
+  },
+  {
+    "id": 10,
+    "titulo": "Código Rojo",
+    "genero": ["Acción", "Suspense"],
+    "duracion": 119,
+    "clasificacion": "R",
+    "sinopsis": "Un agente encubierto se infiltra en una organización peligrosa con un secreto letal.",
+    "imagen": "https://cartelera.montevideo.com.uy/imagenes_espectaculos/moviedetail13/37731.jpg",
+    "horarios": ["13:30", "17:00", "20:30", "23:00"]
+  }
+]
