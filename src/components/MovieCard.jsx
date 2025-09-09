@@ -16,8 +16,8 @@ const MovieCard = ({ title, poster, year, variant = "default" }) => {
         </div>
       )}
 
-      <div className="flex-1 flex flex-col justify-center">
-        <strong className="block text-center font-serif sm:text-[19px]">
+      <div className="flex-1 flex flex-col justify-start sm:justify-center">
+        <strong className="block text-center font-serif sm:text-[19px] leading-none sm:leading-normal">
           {title}
         </strong>
         {variant === "default" && (

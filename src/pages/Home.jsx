@@ -10,14 +10,14 @@ const Home = () => {
       <section className="relative w-screen h-screen bg-[url('../img/banner.png')] bg-cover bg-center flex justify-center overflow-hidden">
         <div className="absolute bottom-0 flex flex-col sm:flex-row justify-center items-center w-full max-w-[1200px] px-4 sm:px-8 gap-6">
           
-          <strong className="text-2xl sm:text-5xl font-serif text-white text-center sm:text-left w-full sm:w-1/2 max-w-full text-shadow-lg text-shadow-[#be6eef]">
+          <strong className="text-3xl sm:text-5xl font-serif text-white text-center sm:text-left w-full sm:w-1/2 max-w-full text-shadow-lg text-shadow-[#be6eef]">
             Vive la magia del cine, donde cada historia cobra vida en la pantalla.
           </strong>
 
           <img
             src="/img/peopleBanner.png"
             alt="People Banner"
-            className="w-60 sm:w-1/2 sm:h-[550px] object-contain max-w-full"
+            className="w-72 sm:w-1/2 sm:h-[550px] object-contain max-w-full"
           />
         </div>
       </section>
