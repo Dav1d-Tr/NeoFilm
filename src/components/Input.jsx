@@ -9,6 +9,7 @@ const Input = ({ type, text }) => {
         name="text"
         type={type}
         placeholder={`Enter your ${text}...`}
+        required
       />
     </div>
   );

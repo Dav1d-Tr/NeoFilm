@@ -12,10 +12,7 @@ const Login = () => {
           <article className="flex flex-col items-center gap-2">
             <Input type="text" text="Username"></Input>
             <Input type="password" text="Password"></Input>
-            <div className="flex justify-center items-center gap-2 text-base text-white font-light">
-              <input type="checkbox" name="" id="" />
-              <a href="#">Terminos y Condiciones</a>
-            </div>
+            <a href="#" className="text-white text-base font-light" >Forgot Password?</a>
             <Button text="Log In" type="btnLogin" />
           </article>
         </form>

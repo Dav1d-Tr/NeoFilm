@@ -7,7 +7,7 @@ const GuideCard = ({title, text, infoButton, icono, link}) => {
     <article className="bg-[#1f1f1c] rounded-xl w-[250px] sm:w-[470px] px-4 py-8 sm:p-10 flex items-center flex-col gap-3 shadow-lg shadow-purple-950">
       <div className="flex flex-col items-center sm:flex-row gap-2 mb-2">
         <FontAwesomeIcon icon={icono} className="text-amber-50 text-5xl sm:text-8xl" />
-        <div className="flex flex-col items-center sm:items-start text-center">
+        <div className="flex flex-col items-center sm:items-start sm:text-start text-center">
           <strong className="text-white text-2xl sm:text-3xl font-serif">
             {title}
           </strong>
