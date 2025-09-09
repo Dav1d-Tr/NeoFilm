@@ -1,0 +1,71 @@
+{
+  "bebidas": [
+    {
+      "id": 1,
+      "title": "Coca-Cola 600ml",
+      "price": 6000,
+      "image": "https://product-images.farmatodo.com/GrH6Pk5kGpQqqxFt0fO3zcsC_bXyI7IX6cw-oic4oRTohGQrsx4BLrk_KdIHvFkrMQMGvxgcv3cVCatARJZQrzUj20NutlkH_2Sb2wav2kdDWMo=s350-rw",
+      "description": "Refresco clásico para acompañar tus comidas."
+    },
+    {
+      "id": 2,
+      "title": "Pepsi 500ml",
+      "price": 5500,
+      "image": "https://milkasrestaurante.com/wp-content/uploads/2024/08/Gaseosa-Postobon-Pepsi-500-ml.webp",
+      "description": "Refresco con sabor único."
+    },
+    {
+      "id": 3,
+      "title": "Agua Cristal 500ml",
+      "price": 3000,
+      "image": "https://coopasan.com.co/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTUxMzY4NCwicHVyIjoiYmxvYl9pZCJ9fQ==--ee6f0a9e4ce292b68c8dc4b9e2812d3dbd547be6/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fZml0IjpbODAwLDgwMF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--cef66509c9cdc75663c0eefd9421db1d2ea4fead/ME00047.png?locale=es",
+      "description": "Agua natural sin gas."
+    }
+  ],
+  "combos": [
+    {
+      "id": 1,
+      "title": "Combo Pareja",
+      "price": 25000,
+      "image": "https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709247175548-3.-Combo-Pareja.png",
+      "description": "2 bebidas + 1 crispetas grandes."
+    },
+    {
+      "id": 2,
+      "title": "Combo Familiar",
+      "price": 40000,
+      "image": "https://archivos-cms.cinecolombia.com/images/6/6/4/7/7466-9-esl-CO/6ce5ad738478-2532cine-colombia.jpg",
+      "description": "4 bebidas + 2 crispetas grandes + 1 chocolatina."
+    },
+    {
+      "id": 3,
+      "title": "Combo Individual",
+      "price": 15000,
+      "image": "https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709246679772-4.-Combo-Individual-Full.png",
+      "description": "1 bebida + 1 crispetas medianas."
+    }
+  ],
+  "dulceria": [
+    {
+      "id": 1,
+      "title": "Chocolatina Jet",
+      "price": 2500,
+      "image": "https://casaysaluddroguerias.com/wp-content/uploads/2022/09/CHOCOLATINA-JET-LECHE-X-15G-CAJA-X-35-UNIDADES-X-UNIDAD.jpg",
+      "description": "Clásica chocolatina de leche."
+    },
+    {
+      "id": 2,
+      "title": "M&M's",
+      "price": 7000,
+      "image": "https://megatiendas.vtexassets.com/arquivos/ids/155554-800-450?v=638284057111200000&width=800&height=450&aspect=true",
+      "description": "Caramelos cubiertos de chocolate."
+    },
+    {
+      "id": 3,
+      "title": "Gomitas Trululu",
+      "price": 5000,
+      "image": "https://exitocol.vtexassets.com/arquivos/ids/26680773/Gomitas-Gusanos-Acidos-Frutal-TRULULU-100-gr-3530799_a.jpg?v=638740097684170000",
+      "description": "Dulces gomitas surtidas."
+    }
+  ]
+}

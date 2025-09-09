@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./components/MainLayout";
 import Home from "./pages/Home";
 import Cartelera from "./pages/Cartelera";
+import Comida from "./pages/Comida";
 import Login from "./pages/Login"
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/cartelera" element={<Cartelera />} />
+          <Route path="/comida" element={<Comida />} />
         </Route>
 
         {/* Rutas especiales sin Footer o con Header diferente */}

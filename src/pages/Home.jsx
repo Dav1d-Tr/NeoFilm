@@ -44,12 +44,14 @@ const Home = () => {
           text="Seleccionar Una funcion"
           infoButton="Ver Cartelara"
           icono={faFilm}
+          link="cartelera"
         ></GuideCard>
         <GuideCard
           title="Snacks Y Bebidas"
           text="Ver Sección De Comidas"
           infoButton="Ver Combos"
           icono={faBurger}
+          link="comida"
         ></GuideCard>
       </section>
       <section className="sm:max-w-[1200px] w-full items-center text-white flex flex-col gap-4 sm:flex-row justify-between py-8">
