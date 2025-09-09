@@ -9,7 +9,7 @@ const MainLayout = () => {
   const isLoginPage = location.pathname === "/login";
   const isRegisterPage = location.pathname === "/register";
   return (
-    <div className="bg-[linear-gradient(to_bottom,_#000000_0%,_#000000_45%,_rgba(119,38,173,0.2)_65%,_#7726ad_100%)]">
+    <div >
       {/* Header con props condicionales */}
       <Header/>
 
@@ -19,7 +19,7 @@ const MainLayout = () => {
       </main>
 
       {/* Footer condicional */}
-      <Footer></Footer>
+      {!isLoginPage && !isRegisterPage && <Footer />}
     </div>
   )
 }

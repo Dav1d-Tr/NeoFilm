@@ -59,7 +59,7 @@ const Header = () => {
           <Link to="/login">
             <Button text="Login" type="btn" />
           </Link>
-          <Link to="/login">
+          <Link to="/register">
             <Button text="Registrarse" type="btn1" />
           </Link>
         </div>
@@ -95,7 +95,7 @@ const Header = () => {
             <Link to="/login">
               <Button text="Login" type="btn" />
             </Link>
-            <Link to="/login">
+            <Link to="/register">
               <Button text="Registrarse" type="btn1" />
             </Link>
           </div>

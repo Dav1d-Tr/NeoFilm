@@ -7,7 +7,7 @@ const CombosCard = ({ title, price, image, descripcion }) => {
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
 
-        <div className="flex-1 flex flex-col justify-start text-center p-0.5 sm:p-2">
+        <div className="flex-1 flex flex-col justify-start text-center p-1 sm:p-2">
           <strong className="block leading-none font-serif text-[14px] sm:text-2xl">{title}</strong>
           <p className="text-[12px] sm:text-[16px] leading-tight sm:leading-normal text-gray-600">{descripcion}</p>
           <span className="text-[12px] sm:text-2xl font-serif">{price}</span>

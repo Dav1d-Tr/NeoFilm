@@ -4,7 +4,8 @@ import MainLayout from "./components/MainLayout";
 import Home from "./pages/Home";
 import Cartelera from "./pages/Cartelera";
 import Comida from "./pages/Comida";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -15,10 +16,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cartelera" element={<Cartelera />} />
           <Route path="/comida" element={<Comida />} />
+          {/* Rutas especiales sin Footer o con Header diferente */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
-
-        {/* Rutas especiales sin Footer o con Header diferente */}
-        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
