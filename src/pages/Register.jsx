@@ -15,6 +15,7 @@ const Register = () => {
             <Input type="email" text="E-mail"></Input>
             <Input type="email" text="Confirmar el E-mail"></Input>
             <Input type="password" text="Password"></Input>
+            <Input type="password" text="Confirmar Password"></Input>
             <Input type="text" text="Tipo de Documento"></Input>
             <Input type="number" text="Número De Documento"></Input>
             <Input type="number" text="Número De Celular"></Input>

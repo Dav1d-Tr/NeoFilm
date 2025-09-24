@@ -6,6 +6,7 @@ import Cartelera from "./pages/Cartelera";
 import Comida from "./pages/Comida";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MovieInfo from "./pages/MovieInfo";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cartelera" element={<Cartelera />} />
           <Route path="/comida" element={<Comida />} />
+          <Route path="/movieinfo" element={<MovieInfo />} />
           {/* Rutas especiales sin Footer o con Header diferente */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

@@ -53,6 +53,16 @@ const Header = () => {
           >
             Alimentos
           </NavLink>
+          <NavLink
+            to="/movieinfo"
+            className={({ isActive }) =>
+              `text-2xl font-serif transition ${
+                isActive ? "text-purple-400" : "text-white hover:text-purple-400"
+              }`
+            }
+          >
+            Info
+          </NavLink>
         </div>
 
         <div className="hidden sm:flex gap-3">

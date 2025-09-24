@@ -9,7 +9,7 @@ const MainLayout = () => {
   const isLoginPage = location.pathname === "/login";
   const isRegisterPage = location.pathname === "/register";
   return (
-    <div >
+    <div>
       {/* Header con props condicionales */}
       <Header/>
 
