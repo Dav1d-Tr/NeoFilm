@@ -1,0 +1,6 @@
+@NeoFilm.Backend_HostAddress = http://localhost:5017
+
+GET {{NeoFilm.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

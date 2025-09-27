@@ -1,0 +1,337 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MICHEL\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\factories\\productfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\factories\\productfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\factories\\snacksfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\factories\\snacksfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\controllers\\snackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\controllers\\snackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\unitsofwork\\interfaces\\igenericunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\unitsofwork\\interfaces\\igenericunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\unitsofwork\\implementations\\genericunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\unitsofwork\\implementations\\genericunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\respositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\respositories\\implementations\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|c:\\michel\\backend\\neofilm.shared\\entities\\snacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|solutionrelative:neofilm.shared\\entities\\snacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|c:\\michel\\backend\\neofilm.shared\\interfaces\\iproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|solutionrelative:neofilm.shared\\interfaces\\iproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\data\\seeddb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\data\\seeddb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|c:\\michel\\backend\\neofilm.shared\\entities\\payments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|solutionrelative:neofilm.shared\\entities\\payments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\respositories\\interfaces\\igenericrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\respositories\\interfaces\\igenericrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|c:\\michel\\backend\\neofilm.shared\\responses\\actionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4564CFC2-7B84-446A-AACF-38C159DC6E05}|NeoFilm.Shared\\NeoFilm.Shared.csproj|solutionrelative:neofilm.shared\\responses\\actionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\migrations\\20250927184654_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\migrations\\20250927184654_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|c:\\michel\\backend\\neofilm.backend\\neofilm.backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{839B9704-4832-4047-AA41-49BD9A536E01}|NeoFilm.Backend\\NeoFilm.Backend.csproj|solutionrelative:neofilm.backend\\neofilm.backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SnacksFactory.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Factories\\SnacksFactory.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Factories\\SnacksFactory.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Factories\\SnacksFactory.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Factories\\SnacksFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:44:17.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductFactory.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Factories\\ProductFactory.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Factories\\ProductFactory.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Factories\\ProductFactory.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Factories\\ProductFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:43:39.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IProduct.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\interfaces\\IProduct.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Shared\\interfaces\\IProduct.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\interfaces\\IProduct.cs",
+              "RelativeToolTip": "NeoFilm.Shared\\interfaces\\IProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:29:56.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SeedDb.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Data\\SeedDb.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Data\\SeedDb.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Data\\SeedDb.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Data\\SeedDb.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAywC8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:05:30.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IGenericUnitOfWork.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\UnitsOfWork\\Interfaces\\IGenericUnitOfWork.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\UnitsOfWork\\Interfaces\\IGenericUnitOfWork.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\UnitsOfWork\\Interfaces\\IGenericUnitOfWork.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\UnitsOfWork\\Interfaces\\IGenericUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:53:10.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IGenericRespository.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Respositories\\Interfaces\\IGenericRespository.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Respositories\\Interfaces\\IGenericRespository.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Respositories\\Interfaces\\IGenericRespository.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Respositories\\Interfaces\\IGenericRespository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:52:46.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ActionResponse.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\Responses\\ActionResponse.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Shared\\Responses\\ActionResponse.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\Responses\\ActionResponse.cs",
+              "RelativeToolTip": "NeoFilm.Shared\\Responses\\ActionResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:51:00.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20250927184654_init.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Migrations\\20250927184654_init.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Migrations\\20250927184654_init.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Migrations\\20250927184654_init.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Migrations\\20250927184654_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:46:54.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Snacks.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\Entities\\Snacks.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Shared\\Entities\\Snacks.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\Entities\\Snacks.cs",
+              "RelativeToolTip": "NeoFilm.Shared\\Entities\\Snacks.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:44:30.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenericController.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Controllers\\GenericController.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Controllers\\GenericController.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Controllers\\GenericController.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Controllers\\GenericController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:00:01.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Program.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Program.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:38:18.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Payments.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\Entities\\Payments.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Shared\\Entities\\Payments.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Shared\\Entities\\Payments.cs",
+              "RelativeToolTip": "NeoFilm.Shared\\Entities\\Payments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:13:04.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Data\\DataContext.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Data\\DataContext.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Data\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:34:36.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SnacksController.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Controllers\\SnacksController.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Controllers\\SnacksController.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Controllers\\SnacksController.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Controllers\\SnacksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:02:43.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PaymentsController.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Controllers\\PaymentsController.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Controllers\\PaymentsController.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Controllers\\PaymentsController.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Controllers\\PaymentsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T19:14:13.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GenericUnitOfWork.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\UnitsOfWork\\Implementations\\GenericUnitOfWork.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\UnitsOfWork\\Implementations\\GenericUnitOfWork.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\UnitsOfWork\\Implementations\\GenericUnitOfWork.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\UnitsOfWork\\Implementations\\GenericUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:57:22.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Respositories\\Implementations\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\Respositories\\Implementations\\GenericRepository.cs",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\Respositories\\Implementations\\GenericRepository.cs",
+              "RelativeToolTip": "NeoFilm.Backend\\Respositories\\Implementations\\GenericRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T18:53:27.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NeoFilm.Backend.http",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.http",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\NeoFilm.Backend.http",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.http",
+              "RelativeToolTip": "NeoFilm.Backend\\NeoFilm.Backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-09-27T18:46:08.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "NeoFilm.Backend\\appsettings.json",
+              "ToolTip": "C:\\MICHEL\\Backend\\NeoFilm.Backend\\appsettings.json",
+              "RelativeToolTip": "NeoFilm.Backend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-27T18:37:04.613Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
