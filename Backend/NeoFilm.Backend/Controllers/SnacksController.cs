@@ -20,7 +20,7 @@ namespace NeoFilm.Backend.Controllers
         public override async Task<IActionResult> PostAsync([FromBody] Snacks snack)
         {
             
-            var factory = new SnackFactory(snack.Name, snack.UnitValue, snack.Description, snack.State);
+            var factory = new SnackFactory(snack.Name, snack.UnitValue, snack.Description, snack.State, snack.imageUrl);
             var snackCreado = (Snacks)factory.CrearProducto();
 
             var result = await _unitOfWork.AddAsync(snackCreado);

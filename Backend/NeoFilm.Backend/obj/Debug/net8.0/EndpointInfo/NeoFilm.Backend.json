@@ -276,6 +276,10 @@
           },
           "state": {
             "type": "boolean"
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

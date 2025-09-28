@@ -19,6 +19,7 @@ namespace NeoFilm.Shared.Entities
         public string Description { get; set; }
         [Display(Name = "estado")]
         public bool State { get; set; }
+        public string imageUrl { get; set; }    
 
         public string GetDescripcion() => $"Snack: {Name}, precio: {UnitValue}";
     }
