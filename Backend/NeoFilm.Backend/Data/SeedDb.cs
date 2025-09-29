@@ -19,7 +19,32 @@ namespace NeoFilm.Backend.Data
             await _context.Database.EnsureCreatedAsync();
             await CheckSnacksAsync();
             await CheckPaymentsAsync();
+            await CheckRolesAsync();
+            await CheckDocumentTypesAsync();
+        }
 
+        private async Task CheckDocumentTypesAsync()
+        {
+            if (!_context.DocumentTypes.Any())
+            {
+                _context.DocumentTypes.Add(new DocumentType { Name = "Cédula de Ciudadanía" });
+                _context.DocumentTypes.Add(new DocumentType { Name = "Tarjeta de Identidad" });
+                _context.DocumentTypes.Add(new DocumentType { Name = "Cédula de Extranjería" });
+                _context.DocumentTypes.Add(new DocumentType { Name = "Pasaporte" });
+            }
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task CheckRolesAsync()
+        {
+            if (!_context.Roles.Any())
+            {
+                _context.Roles.Add(new Role { Name = "Cliente" });
+                _context.Roles.Add(new Role { Name = "Administrador" });
+                _context.Roles.Add(new Role { Name = "Empleado" });
+            }
+
+            await _context.SaveChangesAsync();
         }
 
         private async Task CheckSnacksAsync()

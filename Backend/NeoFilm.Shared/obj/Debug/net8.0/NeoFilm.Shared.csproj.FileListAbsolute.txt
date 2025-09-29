@@ -10,3 +10,15 @@ C:\MICHEL\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.dll
 C:\MICHEL\Backend\NeoFilm.Shared\obj\Debug\net8.0\refint\NeoFilm.Shared.dll
 C:\MICHEL\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.pdb
 C:\MICHEL\Backend\NeoFilm.Shared\obj\Debug\net8.0\ref\NeoFilm.Shared.dll
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\bin\Debug\net8.0\NeoFilm.Shared.deps.json
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\bin\Debug\net8.0\NeoFilm.Shared.dll
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\bin\Debug\net8.0\NeoFilm.Shared.pdb
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.AssemblyInfoInputs.cache
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.AssemblyInfo.cs
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.sourcelink.json
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.dll
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\refint\NeoFilm.Shared.dll
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\NeoFilm.Shared.pdb
+C:\Users\Damina David\Documents\proyectoDSi\NeoFilm\Backend\NeoFilm.Shared\obj\Debug\net8.0\ref\NeoFilm.Shared.dll

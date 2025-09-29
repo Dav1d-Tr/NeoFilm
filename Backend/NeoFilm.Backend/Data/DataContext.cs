@@ -12,12 +12,30 @@ namespace NeoFilm.Backend.Data
 
         public DbSet<Snacks> Snacks { get; set; }
         public DbSet<Payments> Payments { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<DocumentType> DocumentTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Payments>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<Snacks>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<Role>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<User>().HasIndex(c => c.Email).IsUnique();
+            modelBuilder.Entity<User>().HasIndex(c => c.PhoneNumber).IsUnique();
+            modelBuilder.Entity<DocumentType>().HasIndex(c => c.Name).IsUnique();
+            DisableCascadeDelete(modelBuilder);
+        }
+
+        private void DisableCascadeDelete(ModelBuilder modelBuilder)
+        {
+            var relationships = modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys());
+            foreach (var relationship in relationships)
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
         }
     }
 

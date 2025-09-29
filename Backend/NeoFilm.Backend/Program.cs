@@ -3,11 +3,13 @@ using NeoFilm.Backend.Data;
 using NeoFilm.Backend.Repositories.Implementations;
 using NeoFilm.Backend.Repositories.Interfaces;
 using NeoFilm.Backend.UnitsOfWork.Implementations;
+using NeoFilm.Backend.UnitsOfWork.Interfaces;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,6 +19,11 @@ builder.Services.AddTransient<SeedDb>();
 builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
+builder.Services.AddScoped<IRolesRepository, RolesRepository>();
+builder.Services.AddScoped<IRolesUnitOfWork, RolesUnitOfWork>();
+
+builder.Services.AddScoped<IDocumentsTypesRepository, DocumentsTypesRepository>();
+builder.Services.AddScoped<IDocumentsTypesUnitOfWork, DocumentsTypesUnitOfWork>();
 
 var app = builder.Build();
 SeedData(app);
