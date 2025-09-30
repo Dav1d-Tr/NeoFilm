@@ -65,10 +65,11 @@ namespace NeoFilm.Backend.Data
         {
             if (!_context.Snacks.Any())
             {
-                _context.Snacks.Add(new Snacks { Name = "Combo #1", UnitValue= 25000, Description = "1 Hamburguesa, 1 gaseosa", State = true, imageUrl= "HTTP", CategorieSnacksId = 2 });
-                _context.Snacks.Add(new Snacks { Name = "Combo #2", UnitValue = 60000, Description = "2 perros, 1 gaseosa, 1 crispetas medianas", State = false, imageUrl="image/http", CategorieSnacksId = 2 });
-                _context.Snacks.Add(new Snacks { Name = "Combo #3", UnitValue = 20000, Description = "crispetas, 1 gaseosa", State = false, imageUrl="http2/hg/", CategorieSnacksId = 2 });
-
+                _context.Snacks.Add(new Snacks { Name = "Combo Pareja", UnitValue= 25000, Description = "2 bebidas + 1 crispetas grandes.", State = true, imageUrl= "https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709247175548-3.-Combo-Pareja.png", CategorieSnacksId = 2 });
+                _context.Snacks.Add(new Snacks { Name = "Combo Familiar", UnitValue = 40000, Description = "4 bebidas + 2 crispetas grandes + 1 chocolatina.", State = false, imageUrl="https://archivos-cms.cinecolombia.com/images/6/6/4/7/7466-9-esl-CO/6ce5ad738478-2532cine-colombia.jpg", CategorieSnacksId = 2 });
+                _context.Snacks.Add(new Snacks { Name = "Combo Individual", UnitValue = 20000, Description = "1 bebida + 1 crispetas medianas.", State = false, imageUrl="https://cdn.inoutdelivery.com/cinecolombia.inoutdelivery.com/sm/1709246679772-4.-Combo-Individual-Full.png", CategorieSnacksId = 2 });
+                _context.Snacks.Add(new Snacks { Name = "Coca-Cola 600ml", UnitValue = 6000, Description = "Refresco clásico para acompañar tus comidas.", State = false, imageUrl="https://product-images.farmatodo.com/GrH6Pk5kGpQqqxFt0fO3zcsC_bXyI7IX6cw-oic4oRTohGQrsx4BLrk_KdIHvFkrMQMGvxgcv3cVCatARJZQrzUj20NutlkH_2Sb2wav2kdDWMo=s350-rw", CategorieSnacksId = 1 });
+                _context.Snacks.Add(new Snacks { Name = "Agua Cristal 500ml", UnitValue = 3000, Description = "Agua natural sin gas.", State = false, imageUrl="https://coopasan.com.co/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTUxMzY4NCwicHVyIjoiYmxvYl9pZCJ9fQ==--ee6f0a9e4ce292b68c8dc4b9e2812d3dbd547be6/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemVfdG9fZml0IjpbODAwLDgwMF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--cef66509c9cdc75663c0eefd9421db1d2ea4fead/ME00047.png?locale=es", CategorieSnacksId = 1 });
             }
 
             await _context.SaveChangesAsync();
