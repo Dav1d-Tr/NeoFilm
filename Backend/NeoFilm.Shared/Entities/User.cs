@@ -9,6 +9,7 @@ namespace NeoFilm.Shared.Entities
         [MaxLength(20, ErrorMessage = "El campo {0} no puede tener más de {1} caracteres.")]
         [MinLength(10, ErrorMessage = "El campo {0} debe tener al menos {1} caracteres.")]
         [RegularExpression(@"^\d+$", ErrorMessage = "El campo {0} solo puede contener números.")]
+
         public string Id { get; set; } = null!;
 
         [Display(Name = "Nombre")]

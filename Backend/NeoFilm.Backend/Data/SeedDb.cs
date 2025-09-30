@@ -98,11 +98,11 @@ namespace NeoFilm.Backend.Data
             {
                 var user1 = new User
                 {
-                    Id = "1234567890", 
+                    Id = "1", 
                     Name = "Juan",
                     LastName = "Pérez",
-                    Email = "juan.perez@example.com",
-                    ValidateEmail = "juan.perez@example.com",
+                    Email = "neofilm88@gmail.com",
+                    ValidateEmail = "neofilm88@gmail.com",
                     Password = "Secure123!", 
                     ValidatePassword = "Secure123!",
                     PhoneNumber = "3001234567",

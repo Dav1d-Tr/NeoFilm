@@ -34,11 +34,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173") // URL del frontend con Vite
+            policy.WithOrigins("http://localhost:5173") 
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
 });
+
+builder.Services.AddScoped<EmailService>();
 
 var app = builder.Build();
 SeedData(app);

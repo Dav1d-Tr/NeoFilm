@@ -74,6 +74,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "NeoFilm.Backend.Controllers.BillController",
+    "Method": "Create",
+    "RelativePath": "api/Bill/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CreateBillDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NeoFilm.Backend.Controllers.DocumentTypeController",
     "Method": "GetAsync",
     "RelativePath": "api/DocumentType",
