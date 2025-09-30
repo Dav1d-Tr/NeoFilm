@@ -14,9 +14,9 @@ namespace NeoFilm.Shared.Entities
         public DateTime Date { get; set; }
         public decimal Total { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
         public int PaymentId { get; set; }
-        public Payments Payment { get; set; } = null!;
+        public Payments? Payment { get; set; }
+        public User? User { get; set; }
 
     }
 }

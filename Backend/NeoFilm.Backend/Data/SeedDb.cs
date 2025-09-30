@@ -110,7 +110,7 @@ namespace NeoFilm.Backend.Data
                     RoleId = 1          
                 };
 
-
+                _context.Users.Add(user1);
             }
 
             await _context.SaveChangesAsync();
