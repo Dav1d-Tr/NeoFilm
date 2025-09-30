@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using NeoFilm.Backend.Data;
 using NeoFilm.Backend.Repositories.Implementations;
 using NeoFilm.Backend.Repositories.Interfaces;
+using NeoFilm.Backend.Respositories.Implementations;
+using NeoFilm.Backend.Respositories.Interfaces;
 using NeoFilm.Backend.UnitsOfWork.Implementations;
 using NeoFilm.Backend.UnitsOfWork.Interfaces;
 using System.Text.Json.Serialization;
@@ -21,6 +23,8 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 
 builder.Services.AddScoped<IRolesRepository, RolesRepository>();
 builder.Services.AddScoped<IRolesUnitOfWork, RolesUnitOfWork>();
+builder.Services.AddScoped<IBillsRepository, BillsRepository>();
+builder.Services.AddScoped<IBillsUnitOfWork, BillsUnitOfWork>();
 
 builder.Services.AddScoped<IDocumentsTypesRepository, DocumentsTypesRepository>();
 builder.Services.AddScoped<IDocumentsTypesUnitOfWork, DocumentsTypesUnitOfWork>();

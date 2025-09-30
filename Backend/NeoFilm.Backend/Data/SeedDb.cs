@@ -21,6 +21,8 @@ namespace NeoFilm.Backend.Data
             await CheckPaymentsAsync();
             await CheckRolesAsync();
             await CheckDocumentTypesAsync();
+            await CheckUsersAsync();
+            await CheckBillsAsync();    
         }
 
         private async Task CheckDocumentTypesAsync()
@@ -67,6 +69,47 @@ namespace NeoFilm.Backend.Data
                 _context.Payments.Add(new Payments { Name = "Visa" });
                 _context.Payments.Add(new Payments { Name = "nequi" });
          
+
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task CheckBillsAsync()
+        {
+            if (!_context.Bill.Any())
+            {
+                var bill = new Bill
+                {
+                    Date = DateTime.Now,
+                    Total = 100000,
+                    UserId = 1, 
+                    PaymentId = 1
+                };
+
+                _context.Bill.Add(bill);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private async Task CheckUsersAsync()
+        {
+            if (!_context.Users.Any())
+            {
+                var user1 = new User
+                {
+                    Id = "1234567890", 
+                    Name = "Juan",
+                    LastName = "Pérez",
+                    Email = "juan.perez@example.com",
+                    ValidateEmail = "juan.perez@example.com",
+                    Password = "Secure123!", 
+                    ValidatePassword = "Secure123!",
+                    PhoneNumber = "3001234567",
+                    DocumentTypeId = 1, 
+                    RoleId = 1          
+                };
+
 
             }
 
