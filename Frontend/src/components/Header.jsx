@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import Button from "./Button";
+import { UserContext } from "../context/UserContext";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, logout } = useContext(UserContext);
 
   // Cerrar menú al cambiar de ruta
   useEffect(() => {
@@ -13,7 +15,6 @@ const Header = () => {
 
   return (
     <header className="w-full bg-black fixed top-0 z-20 sm:px-20 sm:py-0.5">
-      {/* HEADER SUPERIOR (logo + menú hamburguesa + nav pc + botones pc) */}
       <div className="w-full px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
@@ -65,17 +66,42 @@ const Header = () => {
           </NavLink>
         </div>
 
-        <div className="hidden sm:flex gap-3">
-          <Link to="/login">
-            <Button text="Login" type="btn" />
-          </Link>
-          <Link to="/register">
-            <Button text="Registrarse" type="btn1" />
-          </Link>
+        {/* Botones o usuario logueado */}
+        <div className="hidden sm:flex gap-3 items-center">
+          {user ? (
+            <div className="relative">
+              <button
+                onClick={() => setMenuOpen(prev => !prev)}
+                className="px-4 py-2 bg-purple-700 rounded text-white"
+              >
+                {user.nombre} {user.apellido}
+              </button>
+
+              {menuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg z-50">
+                  <button
+                    onClick={() => { logout(); setMenuOpen(false); }}
+                    className="w-full text-left px-4 py-2 hover:bg-gray-200"
+                  >
+                    Cerrar sesión
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              <Link to="/login">
+                <Button text="Login" type="btn" />
+              </Link>
+              <Link to="/register">
+                <Button text="Registrarse" type="btn1" />
+              </Link>
+            </>
+          )}
         </div>
       </div>
 
-      {/* MENÚ DESPLEGABLE EN MÓVIL (debajo del header) */}
+      {/* MENÚ DESPLEGABLE EN MÓVIL */}
       {menuOpen && (
         <div className="fixed top-[72px] inset-x-0 h-[calc(100vh-72px)] bg-black flex flex-col items-center justify-center gap-4 z-10 sm:hidden">
           <nav className="flex flex-col gap-6 text-white font-medium text-center">
@@ -99,16 +125,26 @@ const Header = () => {
             >
               Alimentos
             </NavLink>
+            {user && (
+              <button
+                onClick={() => logout()}
+                className="text-3xl font-serif mt-6 bg-purple-700 px-4 py-2 rounded"
+              >
+                Cerrar sesión
+              </button>
+            )}
           </nav>
 
-          <div className="flex flex-col items-center gap-12 mt-6">
-            <Link to="/login">
-              <Button text="Login" type="btn" />
-            </Link>
-            <Link to="/register">
-              <Button text="Registrarse" type="btn1" />
-            </Link>
-          </div>
+          {!user && (
+            <div className="flex flex-col items-center gap-12 mt-6">
+              <Link to="/login">
+                <Button text="Login" type="btn" />
+              </Link>
+              <Link to="/register">
+                <Button text="Registrarse" type="btn1" />
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </header>
