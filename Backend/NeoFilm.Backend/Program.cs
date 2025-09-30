@@ -29,8 +29,21 @@ builder.Services.AddScoped<IBillsUnitOfWork, BillsUnitOfWork>();
 builder.Services.AddScoped<IDocumentsTypesRepository, DocumentsTypesRepository>();
 builder.Services.AddScoped<IDocumentsTypesUnitOfWork, DocumentsTypesUnitOfWork>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5173") // URL del frontend con Vite
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 SeedData(app);
+
+app.UseCors("AllowFrontend");
 
 void SeedData(WebApplication app)
 {
@@ -42,8 +55,6 @@ void SeedData(WebApplication app)
         service!.SeedAsync().Wait();
     }
 }
-
-
 
 if (app.Environment.IsDevelopment())
 {

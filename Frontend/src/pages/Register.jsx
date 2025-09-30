@@ -1,30 +1,149 @@
+// src/pages/Register.jsx
+import { useState, useEffect } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import Select from "../components/Select";
 
 const Register = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    confirmEmail: "",
+    password: "",
+    confirmPassword: "",
+    tipoDocumento: "",   // id como string
+    numeroDocumento: "",
+    celular: "",
+    roleId: "1"          // RoleId fijo en 1 (Cliente)
+  });
+
+  const [documentTypes, setDocumentTypes] = useState([]);
+  const API_BASE = "http://localhost:5017"; // ajusta según tu API
+
+  useEffect(() => {
+    const fetchDocumentTypes = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/api/DocumentType`);
+        if (!res.ok) throw new Error(res.statusText);
+        const data = await res.json();
+        const normalized = (Array.isArray(data) ? data : []).map(dt => ({
+          id: dt.id ?? dt.Id,
+          name: dt.name ?? dt.Name
+        })).filter(dt => dt.id !== undefined);
+        setDocumentTypes(normalized);
+      } catch (err) {
+        console.error("Error fetching document types:", err);
+        setDocumentTypes([]);
+      }
+    };
+
+    fetchDocumentTypes();
+  }, []);
+
+  const handleChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validaciones
+    if (formData.password !== formData.confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
+    if (formData.email !== formData.confirmEmail) {
+      alert("Los correos no coinciden");
+      return;
+    }
+    if (!formData.numeroDocumento || !formData.tipoDocumento) {
+      alert("Todos los campos son obligatorios");
+      return;
+    }
+
+    const payload = {
+      Id: formData.numeroDocumento,
+      Name: formData.nombre,
+      LastName: formData.apellido,
+      Email: formData.email,
+      ValidateEmail: formData.confirmEmail,
+      Password: formData.password,
+      ValidatePassword: formData.confirmPassword,
+      PhoneNumber: formData.celular,
+      DocumentTypeId: Number(formData.tipoDocumento),
+      RoleId: 1   // Rol fijo a Cliente
+    };
+
+    try {
+      const res = await fetch(`${API_BASE}/api/User`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        alert("Usuario registrado con éxito ✅");
+        setFormData({
+          nombre: "",
+          apellido: "",
+          email: "",
+          confirmEmail: "",
+          password: "",
+          confirmPassword: "",
+          tipoDocumento: "",
+          numeroDocumento: "",
+          celular: "",
+          roleId: "1"
+        });
+      } else {
+        const err = await res.json().catch(() => ({ status: res.status }));
+        console.error("Error del servidor:", err);
+        alert("Error al registrar usuario ❌");
+      }
+    } catch (err) {
+      console.error("Error de conexión:", err);
+      alert("Error en la conexión con el servidor");
+    }
+  };
+
   return (
-    <main className="flex items-center justify-center gap-8 sm:gap-10 overflow-hidden p-20 sm:h-screen">
-      <section className="flex flex-col gap-2 py-10 items-center">
-        <strong className="uppercase text-4xl font-serif text-white">
-          Registro!
-        </strong>
-        <form action="" className="flex flex-col gap-4 items-center">
-          <article className="px-6 py-2 flex flex-col items-center gap-4 sm:grid grid-cols-3">
-            <Input type="text" text="Nombre"></Input>
-            <Input type="text" text="Apellido"></Input>
-            <Input type="email" text="E-mail"></Input>
-            <Input type="email" text="Confirmar el E-mail"></Input>
-            <Input type="password" text="Password"></Input>
-            <Input type="password" text="Confirmar Password"></Input>
-            <Input type="text" text="Tipo de Documento"></Input>
-            <Input type="number" text="Número De Documento"></Input>
-            <Input type="number" text="Número De Celular"></Input>
-          </article>
-          <div className="flex justify-center items-center gap-2 text-base text-white font-light">
-            <input type="checkbox" name="" id="" />
-            <a href="#">Terminos y Condiciones</a>
+    <main className="flex items-center justify-center px-8 pt-14 sm:h-screen">
+      <section className="w-full max-w-4xl">
+        <h1 className="text-3xl text-white font-serif mb-4 text-center">Registro</h1>
+
+        <form onSubmit={handleSubmit} className="grid gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Input type="text" text="Nombre" value={formData.nombre} onChange={(e) => handleChange("nombre", e.target.value)} />
+            <Input type="text" text="Apellido" value={formData.apellido} onChange={(e) => handleChange("apellido", e.target.value)} />
+            <Input type="email" text="E-mail" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} />
+            <Input type="email" text="Confirmar el E-mail" value={formData.confirmEmail} onChange={(e) => handleChange("confirmEmail", e.target.value)} />
+            <Input type="password" text="Password" value={formData.password} onChange={(e) => handleChange("password", e.target.value)} />
+            <Input type="password" text="Confirmar Password" value={formData.confirmPassword} onChange={(e) => handleChange("confirmPassword", e.target.value)} />
+
+            <Select
+              text="Tipo de Documento"
+              name="tipoDocumento"
+              value={formData.tipoDocumento}
+              options={documentTypes.map(dt => ({ value: String(dt.id), label: dt.name }))}
+              onChange={(e) => handleChange("tipoDocumento", e.target.value)}
+            />
+
+            <Input type="text" text="Número De Documento" value={formData.numeroDocumento} onChange={(e) => handleChange("numeroDocumento", e.target.value)} />
+            <Input type="text" text="Número De Celular" value={formData.celular} onChange={(e) => handleChange("celular", e.target.value)} />
+
+            {/* Input oculto para RoleId fijo */}
+            <Input type="hidden" name="roleId" value="1" />
           </div>
-          <Button text="Unirme" type="btnLogin" />
+
+          <div className="flex items-center gap-2 justify-center">
+            <input type="checkbox" required />
+            <span className="text-white">Acepto términos y condiciones</span>
+          </div>
+
+          <div className="text-center">
+            <Button text="Unirme" type="submit" />
+          </div>
         </form>
       </section>
     </main>
