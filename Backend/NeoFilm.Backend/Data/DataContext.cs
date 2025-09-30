@@ -16,6 +16,8 @@ namespace NeoFilm.Backend.Data
         public DbSet<User> Users { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<Bill> Bill { get; set; }
+        public DbSet<CategorieSnacks> CategorieSnacks { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +28,7 @@ namespace NeoFilm.Backend.Data
             modelBuilder.Entity<User>().HasIndex(c => c.Email).IsUnique();
             modelBuilder.Entity<User>().HasIndex(c => c.PhoneNumber).IsUnique();
             modelBuilder.Entity<DocumentType>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<CategorieSnacks>().HasIndex(c => c.Name).IsUnique();
             DisableCascadeDelete(modelBuilder);
         }
 

@@ -17,12 +17,24 @@ namespace NeoFilm.Backend.Data
         public async Task SeedAsync()
         {
             await _context.Database.EnsureCreatedAsync();
+            await CheckCategoriesSnacksAsync();
             await CheckSnacksAsync();
             await CheckPaymentsAsync();
             await CheckRolesAsync();
             await CheckDocumentTypesAsync();
             await CheckUsersAsync();
             await CheckBillsAsync();    
+        }
+
+        private async Task CheckCategoriesSnacksAsync()
+        {
+            if (!_context.CategorieSnacks.Any())
+            {
+                _context.CategorieSnacks.Add(new CategorieSnacks { Name = "Bebidas" });
+                _context.CategorieSnacks.Add(new CategorieSnacks { Name = "Combos" });
+                _context.CategorieSnacks.Add(new CategorieSnacks { Name = "Dulceria" });
+            }
+            await _context.SaveChangesAsync();
         }
 
         private async Task CheckDocumentTypesAsync()
@@ -53,15 +65,14 @@ namespace NeoFilm.Backend.Data
         {
             if (!_context.Snacks.Any())
             {
-                _context.Snacks.Add(new Snacks { Name = "Combo #1", UnitValue= 25000, Description = "1 Hamburguesa, 1 gaseosa", State = true, imageUrl= "HTTP" });
-                _context.Snacks.Add(new Snacks { Name = "Combo #2", UnitValue = 60000, Description = "2 perros, 1 gaseosa, 1 crispetas medianas", State = false, imageUrl="image/http" });
-                _context.Snacks.Add(new Snacks { Name = "Combo #3", UnitValue = 20000, Description = "crispetas, 1 gaseosa", State = false, imageUrl="http2/hg/" });
+                _context.Snacks.Add(new Snacks { Name = "Combo #1", UnitValue= 25000, Description = "1 Hamburguesa, 1 gaseosa", State = true, imageUrl= "HTTP", CategorieSnacksId = 2 });
+                _context.Snacks.Add(new Snacks { Name = "Combo #2", UnitValue = 60000, Description = "2 perros, 1 gaseosa, 1 crispetas medianas", State = false, imageUrl="image/http", CategorieSnacksId = 2 });
+                _context.Snacks.Add(new Snacks { Name = "Combo #3", UnitValue = 20000, Description = "crispetas, 1 gaseosa", State = false, imageUrl="http2/hg/", CategorieSnacksId = 2 });
 
             }
 
             await _context.SaveChangesAsync();
         }
-
         private async Task CheckPaymentsAsync()
         {
             if (!_context.Payments.Any())

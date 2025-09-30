@@ -1,40 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj": {}
+    "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj": {}
   },
   "projects": {
-    "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj": {
+    "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj",
+        "projectUniqueName": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj",
         "projectName": "NeoFilm.Backend",
-        "projectPath": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj",
-        "packagesPath": "C:\\Users\\paplo\\.nuget\\packages\\",
-        "outputPath": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Backend\\obj\\",
+        "projectPath": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Backend\\NeoFilm.Backend.csproj",
+        "packagesPath": "C:\\Users\\Damina David\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Backend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\paplo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Damina David\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj": {
-                "projectPath": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj"
+              "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj": {
+                "projectPath": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj"
               }
             }
           }
@@ -85,6 +78,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -97,29 +108,22 @@
         }
       }
     },
-    "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj": {
+    "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj",
         "projectName": "NeoFilm.Shared",
-        "projectPath": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj",
-        "packagesPath": "C:\\Users\\paplo\\.nuget\\packages\\",
-        "outputPath": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Backend\\NeoFilm.Shared\\obj\\",
+        "projectPath": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj",
+        "packagesPath": "C:\\Users\\Damina David\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\paplo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Damina David\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -154,6 +158,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
