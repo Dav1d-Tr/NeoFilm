@@ -8,6 +8,11 @@ import Comida from "./pages/Comida";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MovieInfo from "./pages/MovieInfo";
+import AdminLayout from "./components/AdminLayout";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import ManageMovies from "./pages/admin/ManageMovies";
+import ManageSnacks from "./pages/admin/ManageSnacks";
+import NewSnacks from "./pages/admin/NewSnacks";
 import { UserProvider } from "./context/UserContext";
 
 function App() {
@@ -22,6 +27,14 @@ function App() {
             <Route path="/movieinfo" element={<MovieInfo />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+          </Route>
+
+          {/* Layout Admin */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="manageMovies" element={<ManageMovies />} />
+            <Route path="manageSnacks" element={<ManageSnacks />} />
+            <Route path="newSnacks" element={<NewSnacks />} />
           </Route>
         </Routes>
       </Router>

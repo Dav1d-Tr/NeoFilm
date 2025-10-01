@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const MainLayout = () => {
-    const location = useLocation();
+  const location = useLocation();
 
   // Reglas según la ruta actual
   const isLoginPage = location.pathname === "/login";
