@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\AdminHeader.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\AdminHeader.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\GuideCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\GuideCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\Input.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\Input.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\data\\moviesCartelera.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\data\\moviesCartelera.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\pages\\Cartelera.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\Cartelera.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminHeader.jsx",
+              "DocumentMoniker": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\AdminHeader.jsx",
+              "RelativeDocumentMoniker": "src\\components\\AdminHeader.jsx",
+              "ToolTip": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\AdminHeader.jsx",
+              "RelativeToolTip": "src\\components\\AdminHeader.jsx",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-01T16:10:56.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuideCard.jsx",
+              "DocumentMoniker": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\GuideCard.jsx",
+              "RelativeDocumentMoniker": "src\\components\\GuideCard.jsx",
+              "ToolTip": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\GuideCard.jsx",
+              "RelativeToolTip": "src\\components\\GuideCard.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-01T16:10:50.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Input.jsx",
+              "DocumentMoniker": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\Input.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Input.jsx",
+              "ToolTip": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\components\\Input.jsx",
+              "RelativeToolTip": "src\\components\\Input.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-01T16:10:49.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "moviesCartelera.json",
+              "DocumentMoniker": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\data\\moviesCartelera.json",
+              "RelativeDocumentMoniker": "src\\data\\moviesCartelera.json",
+              "ToolTip": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\data\\moviesCartelera.json",
+              "RelativeToolTip": "src\\data\\moviesCartelera.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-01T16:10:36.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cartelera.jsx",
+              "DocumentMoniker": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\pages\\Cartelera.jsx",
+              "RelativeDocumentMoniker": "src\\pages\\Cartelera.jsx",
+              "ToolTip": "C:\\MICHEL\\Nueva carpeta\\NeoFilm\\Frontend\\src\\pages\\Cartelera.jsx",
+              "RelativeToolTip": "src\\pages\\Cartelera.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-01T16:10:17.076Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

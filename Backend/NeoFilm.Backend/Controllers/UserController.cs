@@ -15,12 +15,11 @@ namespace NeoFilm.Backend.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // Si necesitas lógica personalizada para crear usuarios,
-        // puedes sobrescribir el método PostAsync como en SnacksController
+       
         [HttpPost]
         public override async Task<IActionResult> PostAsync([FromBody] User user)
         {
-            // Aquí podrías agregar lógica adicional: validaciones, encriptación de contraseña, etc.
+            
             
             var result = await _unitOfWork.AddAsync(user);
 

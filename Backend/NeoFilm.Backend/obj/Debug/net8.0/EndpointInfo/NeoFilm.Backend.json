@@ -150,6 +150,120 @@
         }
       }
     },
+    "/api/CategorieSnacks": {
+      "get": {
+        "tags": [
+          "CategorieSnacks"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CategorieSnacks"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieSnacks"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieSnacks"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieSnacks"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CategorieSnacks"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieSnacks"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieSnacks"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategorieSnacks"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CategorieSnacks/{id}": {
+      "get": {
+        "tags": [
+          "CategorieSnacks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CategorieSnacks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/DocumentType": {
       "get": {
         "tags": [
@@ -755,6 +869,33 @@
         },
         "additionalProperties": false
       },
+      "CategorieSnacks": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 30,
+            "type": "string",
+            "nullable": true
+          },
+          "snacks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Snacks"
+            },
+            "nullable": true
+          },
+          "snacksNumber": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateBillDTO": {
         "type": "object",
         "properties": {
@@ -882,6 +1023,13 @@
           "imageUrl": {
             "type": "string",
             "nullable": true
+          },
+          "categorieSnacksId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categorieSnacks": {
+            "$ref": "#/components/schemas/CategorieSnacks"
           }
         },
         "additionalProperties": false
