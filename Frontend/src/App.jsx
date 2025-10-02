@@ -13,6 +13,9 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import ManageMovies from "./pages/admin/ManageMovies";
 import ManageSnacks from "./pages/admin/ManageSnacks";
 import NewSnacks from "./pages/admin/NewSnacks";
+import AdminRegister from "./pages/admin/AdminRegister";
+import AdminHome from "./pages/admin/AdminHome";
+import AdminRoute from "./routes/AdminRoute";
 import { UserProvider } from "./context/UserContext";
 
 function App() {
@@ -30,11 +33,14 @@ function App() {
           </Route>
 
           {/* Layout Admin */}
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminDashboard />} />
+          {/* Rutas Admin protegidas */}
+          <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
+            <Route index element={<AdminHome />} />
+            <Route path="adminDashboard" element={<AdminDashboard />} />
             <Route path="manageMovies" element={<ManageMovies />} />
             <Route path="manageSnacks" element={<ManageSnacks />} />
             <Route path="newSnacks" element={<NewSnacks />} />
+            <Route path="adminRegister" element={<AdminRegister />} />
           </Route>
         </Routes>
       </Router>
