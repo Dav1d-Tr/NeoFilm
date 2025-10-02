@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vb3ZXKvEDuM=",
+  "dgSpecHash": "/rvdNpdCI7Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Damina David\\Documents\\DSI\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Damina David\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.20\\microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
-    "C:\\Users\\Damina David\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.20\\microsoft.windowsdesktop.app.ref.8.0.20.nupkg.sha512",
-    "C:\\Users\\Damina David\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.20\\microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Diseño\\NeoFilm\\Backend\\NeoFilm.Shared\\NeoFilm.Shared.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
