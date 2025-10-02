@@ -26,7 +26,7 @@ const EditSnack = () => {
     const [snackCategories, setSnackCategories] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // 🚨 Solo admins
+    // Solo admins
     useEffect(() => {
         if (!user || user.roleId !== 2) {
             alert("No tienes permisos ❌");
@@ -99,11 +99,11 @@ const EditSnack = () => {
                 }),
             });
             if (!res.ok) throw new Error("Error al actualizar snack");
-            alert("Snack actualizado ✅");
+            alert("Snack actualizado");
             navigate("/admin/manageSnacks");
         } catch (err) {
             console.error(err);
-            alert("No se pudo actualizar ❌");
+            alert("No se pudo actualizar");
         }
     };
 

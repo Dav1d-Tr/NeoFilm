@@ -21,7 +21,10 @@ namespace NeoFilm.Backend.Data
         public DbSet<CategorieFilms> CategorieFilms { get; set; }
         public DbSet<Format> Formats  { get; set; }
         public DbSet<Function> Functions  { get; set; }
-
+        public DbSet<Venue> Venues { get; set; }
+        public DbSet<MovieTheater> MovieTheaters { get; set; }
+        public DbSet<Seat> Seats { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -36,6 +39,9 @@ namespace NeoFilm.Backend.Data
             modelBuilder.Entity<Film>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<Format>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<Function>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<Venue>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<MovieTheater>().HasIndex(x => new { x.Id, x.Name }).IsUnique();
+            modelBuilder.Entity<Seat>().Property(c => c.Status).HasConversion<string>();
             DisableCascadeDelete(modelBuilder);
         }
 
@@ -46,8 +52,6 @@ namespace NeoFilm.Backend.Data
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
-
         }
     }
-
 }

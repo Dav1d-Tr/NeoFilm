@@ -17,10 +17,10 @@ const Register = () => {
     confirmEmail: "",
     password: "",
     confirmPassword: "",
-    tipoDocumento: "", // id como string
+    tipoDocumento: "", 
     numeroDocumento: "",
     celular: "",
-    roleId: "1", // RoleId fijo en 1 (Cliente)
+    roleId: "1",
   });
 
   const [documentTypes, setDocumentTypes] = useState([]);
@@ -97,7 +97,7 @@ const Register = () => {
           email: formData.email,
         });
 
-        alert("Usuario registrado con éxito ✅");
+        alert("Usuario registrado con éxito");
 
         // Redirigir a página inicial
         navigate("/");
@@ -194,7 +194,6 @@ const Register = () => {
               onChange={(e) => handleChange("celular", e.target.value)}
             />
 
-            {/* Input oculto para RoleId fijo */}
             <Input type="hidden" name="roleId" value="1" />
           </div>
 

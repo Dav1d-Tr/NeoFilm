@@ -12,9 +12,9 @@ const NewSnacks = () => {
     nombre: "",
     descripcion: "",
     precio: "",
-    estado: "true", // por defecto activo
+    estado: "true",
     imagen: "",
-    tipoSnack: "", // CategorieSnacksId
+    tipoSnack: "",
   });
 
   const [snackCategories, setSnackCategories] = useState([]);
@@ -76,12 +76,12 @@ const NewSnacks = () => {
       });
 
       if (res.ok) {
-        alert("Snack agregado con éxito ✅");
-        navigate("/admin"); // o la ruta que desees
+        alert("Snack agregado con éxito");
+        navigate("/admin");
       } else {
         const err = await res.text();
         console.error("Error:", err);
-        alert("Error al agregar snack ❌");
+        alert("Error al agregar snack");
       }
     } catch (err) {
       console.error("Error de conexión:", err);

@@ -26,12 +26,10 @@ const Login = () => {
 
     setLoading(true);
     try {
-      // Traemos todos los usuarios
       const res = await fetch(`${API_BASE}/api/User`);
       if (!res.ok) throw new Error("Error al traer usuarios");
       const users = await res.json();
 
-      // Buscamos el usuario que coincida con email y password
       const user = users.find(
         (u) =>
           u.email.toLowerCase() === formData.email.toLowerCase() &&
@@ -39,13 +37,12 @@ const Login = () => {
       );
 
       if (user) {
-        // Guardamos sesión (incluyendo rol)
         login({
           id: user.id,
           nombre: user.name,
           apellido: user.lastName,
           email: user.email,
-          roleId: user.roleId, // 👈 Guardamos el rol también
+          roleId: user.roleId,
         });
 
         // Redirigir según rol

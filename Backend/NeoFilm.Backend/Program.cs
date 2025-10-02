@@ -10,7 +10,6 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -39,12 +38,20 @@ builder.Services.AddScoped<IFormatsUnitOfWork, FormatsUnitOfWork>();
 builder.Services.AddScoped<IDocumentsTypesRepository, DocumentsTypesRepository>();
 builder.Services.AddScoped<IDocumentsTypesUnitOfWork, DocumentsTypesUnitOfWork>();
 
+builder.Services.AddScoped<IVenuesRepository, VenuesRepository>();
+builder.Services.AddScoped<IVenuesUnitOfWork, VenuesUnitOfWork>();
+
+builder.Services.AddScoped<IFilmsRepository, FilmsRepository>();
+builder.Services.AddScoped<IFilmsUnitOfWork, FilmsUnitOfWork>();
+
+builder.Services.AddScoped<IMovieTheaterRepository, MovieTheaterRepository>();
+builder.Services.AddScoped<IMovieTheaterUnitOfWork, MovieTheaterUnitOfWork>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173") 
+            policy.WithOrigins("http://localhost:5173")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });

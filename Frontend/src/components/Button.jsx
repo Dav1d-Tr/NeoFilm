@@ -1,7 +1,6 @@
 import React from "react";
 
-const Button = ({ text, type }) => {
-  // Si type === "submit" => botón submit; si type === "btn" => variante; sino variante por defecto
+const Button = ({ text, type, onClick }) => {
   const isSubmit = type === "submit";
   const style = isSubmit
     ? "bg-[#be6eef] border-4 border-[#be6eef] px-6 py-2 font-bold rounded-lg text-white hover:bg-transparent hover:text-[#be6eef] w-48"
@@ -10,7 +9,11 @@ const Button = ({ text, type }) => {
     : "bg-[#be6eef] border-4 border-[#be6eef] px-6 py-2 font-bold rounded-lg text-white hover:bg-transparent hover:text-[#be6eef] w-48";
 
   return (
-    <button type={isSubmit ? "submit" : "button"} className={style}>
+    <button
+      type={isSubmit ? "submit" : "button"}
+      className={style}
+      onClick={onClick} 
+    >
       {text}
     </button>
   );

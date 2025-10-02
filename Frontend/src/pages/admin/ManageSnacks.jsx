@@ -15,7 +15,7 @@ const ManageSnacks = () => {
       if (!response.ok) throw new Error("Error al obtener categorías");
       const data = await response.json();
 
-      // Filtramos solo categorías con snacks
+    
       const categoriasConSnacks = data.filter(
         (categoria) => categoria.snacks && categoria.snacks.length > 0
       );
@@ -40,7 +40,6 @@ const ManageSnacks = () => {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Error al eliminar el snack");
-      // Volvemos a cargar las categorías
       fetchCategorias();
     } catch (err) {
       console.error(err);

@@ -14,8 +14,6 @@ const Comida = () => {
         if (!response.ok) throw new Error("Error al obtener categorías");
 
         const data = await response.json();
-
-        // 🔥 Filtramos para que solo aparezcan categorías con snacks
         const categoriasConSnacks = data.filter(
           (categoria) => categoria.snacks && categoria.snacks.length > 0
         );

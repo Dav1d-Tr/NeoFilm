@@ -55,7 +55,7 @@ const Header = () => {
             Alimentos
           </NavLink>
           <NavLink
-            to="/movieinfo"
+            to="newFilm"
             className={({ isActive }) =>
               `text-2xl font-serif transition ${
                 isActive ? "text-purple-400" : "text-white hover:text-purple-400"
@@ -132,7 +132,7 @@ const Header = () => {
               Alimentos
             </NavLink>
             <NavLink
-              to="/comida"
+              to="newFilm"
               className={({ isActive }) =>
                 `text-3xl font-serif transition ${
                   isActive ? "text-purple-400" : "text-white hover:text-purple-400"

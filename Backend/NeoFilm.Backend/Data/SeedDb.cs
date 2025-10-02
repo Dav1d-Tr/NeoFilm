@@ -17,15 +17,154 @@ namespace NeoFilm.Backend.Data
         public async Task SeedAsync()
         {
             await _context.Database.EnsureCreatedAsync();
-            await CheckCategoriesSnacksAsync();
             await CheckCategoriesFilmsAsync();
-            await CheckSnacksAsync();
-            await CheckPaymentsAsync();
+            await CheckVenuesAsync();
+            await CheckMovieTheaterAsync();
+            await CheckFormatsAsync();
+            await CheckFilmsAsync();
+            await CheckSeatsAsync();
+            await CheckCategoriesSnacksAsync();
             await CheckRolesAsync();
             await CheckDocumentTypesAsync();
+            await CheckSnacksAsync();
             await CheckUsersAsync();
+            await CheckPaymentsAsync();
             await CheckBillsAsync();
-            await CheckFilmsAsync();
+            await CheckFunctionsAsync();
+        }
+
+        private async Task CheckFunctionsAsync()
+        {
+            if (!_context.Functions.Any())
+            {
+                _context.Functions.Add(new Function
+                {
+                    Name = "Función 2D - Matiné",
+                    Description = "Proyección en formato 2D en la primera tanda del día.",
+                    Fecha = new DateTime(2025, 10, 5),
+                    Hora = new TimeSpan(12, 0, 0),
+                    FilmId = 1,        
+                    FormatId = 1,      
+                    MovieTheaterId = 1 
+                });
+
+                _context.Functions.Add(new Function
+                {
+                    Name = "Función 3D - Tarde",
+                    Description = "Proyección en formato 3D con gafas.",
+                    Fecha = new DateTime(2025, 10, 5),
+                    Hora = new TimeSpan(16, 30, 0),
+                    FilmId = 2,
+                    FormatId = 2,
+                    MovieTheaterId = 1
+                });
+
+                _context.Functions.Add(new Function
+                {
+                    Name = "Función IMAX - Noche",
+                    Description = "Proyección en sala IMAX con mayor resolución y pantalla gigante.",
+                    Fecha = new DateTime(2025, 10, 5),
+                    Hora = new TimeSpan(20, 0, 0),
+                    FilmId = 3,
+                    FormatId = 3,
+                    MovieTheaterId = 2
+                });
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task CheckFormatsAsync()
+        {
+            if (!_context.Formats.Any())
+            {
+                _context.Formats.Add(new Format
+                {
+                    Name = "2D",
+                    Description = "Formato tradicional en dos dimensiones."
+                });
+
+                _context.Formats.Add(new Format
+                {
+                    Name = "3D",
+                    Description = "Formato tridimensional con gafas especiales."
+                });
+
+                _context.Formats.Add(new Format
+                {
+                    Name = "IMAX",
+                    Description = "Pantalla de gran formato con mayor resolución."
+                });
+
+                _context.Formats.Add(new Format
+                {
+                    Name = "4DX",
+                    Description = "Formato con efectos sensoriales (movimiento, agua, viento)."
+                });
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
+
+        private async Task CheckSeatsAsync()
+        {
+            if (!_context.Seats.Any())
+            {
+                _context.Seats.Add(new Seat
+                {
+                    Row = "A",
+                    Number = 1,
+                    Status = SeatStatus.Available,
+                    MovieTheaterId = 1
+                });
+
+                _context.Seats.Add(new Seat
+                {
+                    Row = "A",
+                    Number = 2,
+                    Status = SeatStatus.Available,
+                    MovieTheaterId = 1
+                });
+            }
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task CheckMovieTheaterAsync()
+        {
+            if (!_context.MovieTheaters.Any())
+            {
+                _context.MovieTheaters.Add(new MovieTheater
+                {
+                    Name = "Sala 1",
+                    VenueId = 1,
+                    Capacity = 15
+                });
+                _context.MovieTheaters.Add(new MovieTheater
+                {
+                    Name = "Sala VIP",
+                    VenueId = 1,
+                    Capacity = 40
+                });
+
+                _context.MovieTheaters.Add(new MovieTheater
+                {
+                    Name = "Sala IMAX",
+                    VenueId = 2,
+                    Capacity = 120
+                });
+            }
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task CheckVenuesAsync()
+        {
+            if (!_context.Venues.Any())
+            {
+                _context.Venues.Add(new Venue { Name = "Medayork", Location = "Centro comercial oviedo" });
+                _context.Venues.Add(new Venue { Name = "Medallo", Location = "Centro comercial Aventura" });
+            }
+            await _context.SaveChangesAsync();
         }
 
         private async Task CheckCategoriesSnacksAsync()
@@ -76,6 +215,7 @@ namespace NeoFilm.Backend.Data
 
             await _context.SaveChangesAsync();
         }
+
         private async Task CheckPaymentsAsync()
         {
             if (!_context.Payments.Any())
@@ -108,9 +248,9 @@ namespace NeoFilm.Backend.Data
         {
             if (!_context.Users.Any())
             {
-                var user1 = new User
+                _context.Users.Add(new User
                 {
-                    Id = "1",
+                    Id = "1045864864",
                     Name = "Juan",
                     LastName = "Pérez",
                     Email = "neofilm88@gmail.com",
@@ -120,9 +260,21 @@ namespace NeoFilm.Backend.Data
                     PhoneNumber = "3001234567",
                     DocumentTypeId = 1,
                     RoleId = 1
-                };
+                });
 
-                _context.Users.Add(user1);
+                _context.Users.Add(new User
+                {
+                    Id = "1025645873",
+                    Name = "David",
+                    LastName = "Rozo",
+                    Email = "ddavid.rozod@gmail.com",
+                    ValidateEmail = "ddavid.rozod@gmail.com",
+                    Password = "Da1025645873*",
+                    ValidatePassword = "Da1025645873*",
+                    PhoneNumber = "3045599449",
+                    DocumentTypeId = 1,
+                    RoleId = 2
+                });
             }
 
             await _context.SaveChangesAsync();
@@ -151,53 +303,51 @@ namespace NeoFilm.Backend.Data
             {
                 _context.Films.Add(new Film
                 {
-                    Name = "El Viaje de los Sueños",
-                    Description = "Un joven descubre un mundo mágico mientras busca a su hermano perdido.",
-                    Duration = 125,
-                    Distribution = "PG-13", // Uso clasificación en Distribution
-                    ImageUrl = "https://image.tmdb.org/t/p/w500/2lECpi35Hnbpa4y46JX0aY3AWTy.jpg",
-                    Trailer = "https://youtu.be/dummy1", // ⚡Pon un link válido si tienes
+                    Name = "TELEFONO NEGRO 2",
+                    Description = "Hace cuatro años, Finn, de 13 años, mató a su secuestrador y escapó, convirtiéndose en el único sobreviviente de El Raptor. Pero el verdadero mal trasciende la muerte… y el teléfono vuelve a sonar.",
+                    Duration = 114,
+                    Distribution = "Ethan Hawke, Mason Thames, Madeleine McGraw, Demián Bichir, Miguel Mora, Jeremy Davies, Arianna Rivas",
+                    ImageUrl = "https://www.pantallasprocinal.com.co/img/peliculas/1794.jpg?v=1.0.28",
+                    Trailer = "https://youtu.be/7pdHPo4_8Pg?si=Ocs3ijtjKLVjocDB",
                     CategorieFilmsId = 1
                 });
 
                 _context.Films.Add(new Film
                 {
-                    Name = "Cyber Rescate",
-                    Description = "Un equipo de hackers debe salvar la ciudad de un virus que controla la tecnología.",
+                    Name = "JURASSIC WORLD REBIRTH",
+                    Description = "Cinco años después de los acontecimientos de Jurassic World: Dominio, la ecología del planeta se ha vuelto inhóspita para los dinosaurios. Los que quedan viven en entornos ecuatoriales aislados con climas semejantes al de los lugares donde alguna vez prosperaron. Las tres criaturas más colosales de la tierra, el mar y el aire dentro de esa biosfera tropical poseen, en su ADN, la clave para un medicamento que aportará a la humanidad milagrosos beneficios para salvar vidas.",
+                    Duration = 135,
+                    Distribution = "Scarlett Johansson Mahershala Ali Jonathan Bailey Rupert Friend Manuel García-Rulfo Luna Blaise David Iacono Audrina Miranda Philippine Velge Bechir Sylvain Ed Skrein",
+                    ImageUrl = "https://www.pantallasprocinal.com.co/img/peliculas/1664.jpg?v=1.0.28",
+                    Trailer = "https://youtu.be/DzMbe-SKwxU?si=WNFhA4v631PBKrad",
+                    CategorieFilmsId = 1
+                });
+
+                _context.Films.Add(new Film
+                {
+                    Name = "CAMINA O MUERE",
+                    Description = "De la esperada adaptación de la primera novela escrita por el maestro narrador Stephen King,y Francis Lawrence, el director visionario de las películas de la franquicia Los Juegos del Hambre (En llamas, Sinsajo – Partes 1 y 2, y La balada de los pájaros cantores y las serpientes), llega The Long Walk/ Camina o Muere, un thriller intenso, escalofriante y emotivo que desafía al público a enfrentar una pregunta inquietante: ¿Hasta dónde serías capaz de llegar?",
                     Duration = 110,
-                    Distribution = "PG-13",
-                    ImageUrl = "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
-                    Trailer = "https://youtu.be/dummy2",
+                    Distribution = "Cooper Hoffman, David Jonsson, Garrett Wareing, Tut Nyuot, Charlie Plummer, Ben Wang, Roman Griffin Davis, Jordan Gonzalez, Josh Hamilton, Judy Greer, Mark Hamill",
+                    ImageUrl = "https://www.pantallasprocinal.com.co/img/peliculas/1808.jpg?v=1.0.28",
+                    Trailer = "https://youtu.be/acwv1gQgd0Y?si=fWTIIDWH-MM9XpDm",
                     CategorieFilmsId = 1
                 });
 
                 _context.Films.Add(new Film
                 {
-                    Name = "Amor entre Sombras",
-                    Description = "Dos almas gemelas se encuentran en circunstancias imposibles y luchan por su amor.",
-                    Duration = 98,
-                    Distribution = "PG",
-                    ImageUrl = "https://pics.filmaffinity.com/Amor_entre_sombras-895239833-large.jpg",
-                    Trailer = "https://youtu.be/dummy3",
-                    CategorieFilmsId = 2
-                });
-
-                _context.Films.Add(new Film
-                {
-                    Name = "Buscando Justicia",
-                    Description = "Un exsoldado busca justicia mientras enfrenta una red criminal internacional.",
+                    Name = "ZOOTOPIA 2",
+                    Description = "Tras resolver el caso más importante en la historia de Zootopia, los oficiales novatos Judy Hopps y Nick Wilde descubren que su sociedad no es tan sólida como pensaban, cuando el Jefe Bogo les ordena unirse al programa de consejería “Compañeros en Crisis”. Sin embargo, su vínculo será puesto a prueba cuando se ven envueltos en una intrincada investigación relacionada con la llegada de una serpiente venenosa a la metrópoli de animales.",
                     Duration = 132,
-                    Distribution = "R",
-                    ImageUrl = "https://m.media-amazon.com/images/S/pv-target-images/61cd751fa24ae50aa6fc1d4670aab4eb437c5360de539138ab941c120f4025dd.jpg",
-                    Trailer = "https://youtu.be/dummy4",
-                    CategorieFilmsId = 3
+                    Distribution = "Ginnifer Goodwin | Jason Bateman | Quinta Brunson | Idris Elba | Shakira",
+                    ImageUrl = "https://www.pantallasprocinal.com.co/img/peliculas/1892.jpg?v=1.0.28",
+                    Trailer = "https://youtu.be/7gytUpiues8?si=pzh-Iqdn2QLBc9C6",
+                    CategorieFilmsId = 1
                 });
             }
 
             await _context.SaveChangesAsync();
         }
-
-
 
     }
 }

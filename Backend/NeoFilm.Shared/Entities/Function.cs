@@ -30,5 +30,8 @@ namespace NeoFilm.Shared.Entities
 
         public int FormatId { get; set; }
         public Format? Format { get; set; }
+
+        public int MovieTheaterId { get; set; }
+        public MovieTheater? MovieTheater { get; set; }
     }
 }

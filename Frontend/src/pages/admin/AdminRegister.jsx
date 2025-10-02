@@ -128,7 +128,7 @@ const AdminRegister = () => {
         alert("Usuario registrado con éxito");
 
         // Redirigir a página inicial
-        navigate("/admin/adminDashboard");
+        navigate("/admin");
 
         // Limpiar formulario
         setFormData({

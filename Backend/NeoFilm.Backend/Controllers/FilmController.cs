@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using NeoFilm.Backend.Repositories.Interfaces;
+using NeoFilm.Backend.UnitsOfWork.Interfaces;
 using NeoFilm.Shared.Entities;
 
 namespace NeoFilm.Backend.Controllers
@@ -8,27 +9,32 @@ namespace NeoFilm.Backend.Controllers
     [Route("api/[controller]")]
     public class FilmController : GenericController<Film>
     {
-        private readonly IGenericUnitOfWork<Film> _unitOfWork;
-
-        public FilmController(IGenericUnitOfWork<Film> unitOfWork) : base(unitOfWork)
+        private readonly IFilmsUnitOfWork _filmsUnitOfWork;
+        public FilmController(IGenericUnitOfWork<Film> unitOfWork, IFilmsUnitOfWork filmsUnitOfWork) : base(unitOfWork)
         {
-            _unitOfWork = unitOfWork;
+            _filmsUnitOfWork = filmsUnitOfWork;
         }
 
-       
-        [HttpPost]
-        public override async Task<IActionResult> PostAsync([FromBody] Film film)
+        [HttpGet]
+        public override async Task<IActionResult> GetAsync()
         {
-            
-            
-            var result = await _unitOfWork.AddAsync(film);
+        var action = await _filmsUnitOfWork.GetAsync();
+        if (action.WasSuccess)
+        {
+            return Ok(action.Result);
+        }
+            return BadRequest();
+        }
 
-            if (!result.WasSuccess)
-            {
-                return BadRequest(result.Message);
-            }
-
-            return Ok("Usuario agregado correctamente");
+        [HttpGet("{id}")]
+        public override async Task<IActionResult> GetAsync(int id)
+        {
+        var action = await _filmsUnitOfWork.GetAsync(id);
+        if (action.WasSuccess)
+        {
+            return Ok(action.Result);
+        }
+            return NotFound();
         }
     }
 }

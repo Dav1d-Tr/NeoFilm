@@ -54,6 +54,27 @@ namespace NeoFilm.Backend.Migrations
                     b.ToTable("Bill");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.CategorieFilms", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("CategorieFilms");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.CategorieSnacks", b =>
                 {
                     b.Property<int>("Id")
@@ -96,6 +117,155 @@ namespace NeoFilm.Backend.Migrations
                     b.ToTable("DocumentTypes");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Film", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategorieFilmsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Distribution")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Trailer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategorieFilmsId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Films");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Format", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Formats");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Function", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FilmId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FormatId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("Hora")
+                        .HasColumnType("time");
+
+                    b.Property<int>("MovieTheaterId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FilmId");
+
+                    b.HasIndex("FormatId");
+
+                    b.HasIndex("MovieTheaterId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Functions");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.MovieTheater", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("VenueId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VenueId");
+
+                    b.HasIndex("Id", "Name")
+                        .IsUnique();
+
+                    b.ToTable("MovieTheaters");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.Payments", b =>
                 {
                     b.Property<int>("Id")
@@ -136,6 +306,35 @@ namespace NeoFilm.Backend.Migrations
                         .IsUnique();
 
                     b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Seat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("MovieTheaterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Row")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieTheaterId");
+
+                    b.ToTable("Seats");
                 });
 
             modelBuilder.Entity("NeoFilm.Shared.Entities.Snacks", b =>
@@ -239,6 +438,32 @@ namespace NeoFilm.Backend.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Venue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Venues");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.Bill", b =>
                 {
                     b.HasOne("NeoFilm.Shared.Entities.Payments", "Payment")
@@ -255,6 +480,66 @@ namespace NeoFilm.Backend.Migrations
                     b.Navigation("Payment");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Film", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.CategorieFilms", "CategorieFilms")
+                        .WithMany("Films")
+                        .HasForeignKey("CategorieFilmsId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CategorieFilms");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Function", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.Film", "Film")
+                        .WithMany("Functions")
+                        .HasForeignKey("FilmId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("NeoFilm.Shared.Entities.Format", "Format")
+                        .WithMany("Functions")
+                        .HasForeignKey("FormatId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("NeoFilm.Shared.Entities.MovieTheater", "MovieTheater")
+                        .WithMany("Functions")
+                        .HasForeignKey("MovieTheaterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Film");
+
+                    b.Navigation("Format");
+
+                    b.Navigation("MovieTheater");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.MovieTheater", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.Venue", "Venue")
+                        .WithMany("MovieTheaters")
+                        .HasForeignKey("VenueId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Venue");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Seat", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.MovieTheater", "MovieTheater")
+                        .WithMany("Seats")
+                        .HasForeignKey("MovieTheaterId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("MovieTheater");
                 });
 
             modelBuilder.Entity("NeoFilm.Shared.Entities.Snacks", b =>
@@ -287,6 +572,11 @@ namespace NeoFilm.Backend.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.CategorieFilms", b =>
+                {
+                    b.Navigation("Films");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.CategorieSnacks", b =>
                 {
                     b.Navigation("Snacks");
@@ -295,6 +585,23 @@ namespace NeoFilm.Backend.Migrations
             modelBuilder.Entity("NeoFilm.Shared.Entities.DocumentType", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Film", b =>
+                {
+                    b.Navigation("Functions");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Format", b =>
+                {
+                    b.Navigation("Functions");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.MovieTheater", b =>
+                {
+                    b.Navigation("Functions");
+
+                    b.Navigation("Seats");
                 });
 
             modelBuilder.Entity("NeoFilm.Shared.Entities.Payments", b =>
@@ -310,6 +617,11 @@ namespace NeoFilm.Backend.Migrations
             modelBuilder.Entity("NeoFilm.Shared.Entities.User", b =>
                 {
                     b.Navigation("Bills");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Venue", b =>
+                {
+                    b.Navigation("MovieTheaters");
                 });
 #pragma warning restore 612, 618
         }

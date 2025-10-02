@@ -17,6 +17,8 @@ import AdminRegister from "./pages/admin/AdminRegister";
 import AdminHome from "./pages/admin/AdminHome";
 import AdminRoute from "./routes/AdminRoute";
 import EditSnack from "./pages/admin/EditSnack";
+import NewFilm from "./pages/admin/NewFilm"
+import EditFilms from "./pages/admin/EditFilms"
 import { UserProvider } from "./context/UserContext";
 
 function App() {
@@ -28,7 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cartelera" element={<Cartelera />} />
             <Route path="/comida" element={<Comida />} />
-            <Route path="/movieinfo" element={<MovieInfo />} />
+            <Route path="/movies/:id" element={<MovieInfo />} /> 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/adminRegister" element={<AdminRegister />} />
@@ -41,7 +43,9 @@ function App() {
             <Route index element={<AdminDashboard />} />
             <Route path="manageMovies" element={<ManageMovies />} />
             <Route path="manageSnacks" element={<ManageSnacks />} />
+            <Route path="newFilm" element={<NewFilm />} />
             <Route path="newSnacks" element={<NewSnacks />} />
+            <Route path="movies/edit/:id" element={<EditFilms />} />
             <Route path="snacks/edit/:id" element={<EditSnack />} />
           </Route>
         </Routes>
