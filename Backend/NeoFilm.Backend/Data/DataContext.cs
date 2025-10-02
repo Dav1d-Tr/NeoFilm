@@ -17,7 +17,10 @@ namespace NeoFilm.Backend.Data
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<Bill> Bill { get; set; }
         public DbSet<CategorieSnacks> CategorieSnacks { get; set; }
-
+        public DbSet<Film> Films { get; set; }
+        public DbSet<CategorieFilms> CategorieFilms { get; set; }
+        public DbSet<Format> Formats  { get; set; }
+        public DbSet<Function> Functions  { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +32,10 @@ namespace NeoFilm.Backend.Data
             modelBuilder.Entity<User>().HasIndex(c => c.PhoneNumber).IsUnique();
             modelBuilder.Entity<DocumentType>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<CategorieSnacks>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<CategorieFilms>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<Film>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<Format>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<Function>().HasIndex(c => c.Name).IsUnique();
             DisableCascadeDelete(modelBuilder);
         }
 

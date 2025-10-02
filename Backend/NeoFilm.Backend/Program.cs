@@ -30,6 +30,12 @@ builder.Services.AddScoped<IBillsUnitOfWork, BillsUnitOfWork>();
 builder.Services.AddScoped<ICategorieSnacksRepository, CategorieSnacksRepository>();
 builder.Services.AddScoped<ICategorieSnacksUnitOfWork, CategorieSnacksUnitOfWork>();
 
+builder.Services.AddScoped<ICategorieFilmsRepository, CategorieFilmsRepository>();
+builder.Services.AddScoped<ICategorieFilmsUnitOfWork, CategorieFilmsUnitOfWork>();
+
+builder.Services.AddScoped<IFormatsRepository, FormatsRepository>();
+builder.Services.AddScoped<IFormatsUnitOfWork, FormatsUnitOfWork>();
+
 builder.Services.AddScoped<IDocumentsTypesRepository, DocumentsTypesRepository>();
 builder.Services.AddScoped<IDocumentsTypesUnitOfWork, DocumentsTypesUnitOfWork>();
 
