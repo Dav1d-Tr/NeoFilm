@@ -16,6 +16,7 @@ import NewSnacks from "./pages/admin/NewSnacks";
 import AdminRegister from "./pages/admin/AdminRegister";
 import AdminHome from "./pages/admin/AdminHome";
 import AdminRoute from "./routes/AdminRoute";
+import EditSnack from "./pages/admin/EditSnack";
 import { UserProvider } from "./context/UserContext";
 
 function App() {
@@ -30,17 +31,18 @@ function App() {
             <Route path="/movieinfo" element={<MovieInfo />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/adminRegister" element={<AdminRegister />} />
+            <Route path="/adminHome" element={<AdminHome />} />
           </Route>
 
           {/* Layout Admin */}
           {/* Rutas Admin protegidas */}
           <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
-            <Route index element={<AdminHome />} />
-            <Route path="adminDashboard" element={<AdminDashboard />} />
+            <Route index element={<AdminDashboard />} />
             <Route path="manageMovies" element={<ManageMovies />} />
             <Route path="manageSnacks" element={<ManageSnacks />} />
             <Route path="newSnacks" element={<NewSnacks />} />
-            <Route path="adminRegister" element={<AdminRegister />} />
+            <Route path="snacks/edit/:id" element={<EditSnack />} />
           </Route>
         </Routes>
       </Router>

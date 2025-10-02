@@ -13,7 +13,7 @@ const AdminHome = () => {
           <Link to="/login">
             <Button text="Login" type="btn" />
           </Link>
-          <Link to="/admin/adminRegister">
+          <Link to="/adminRegister">
             <Button text="Registrarse" type="btn1" />
           </Link>
         </div>

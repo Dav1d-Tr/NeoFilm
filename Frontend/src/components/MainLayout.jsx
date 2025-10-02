@@ -9,7 +9,7 @@ const MainLayout = () => {
   const isLoginPage = location.pathname === "/login";
   const isRegisterPage = location.pathname === "/register";
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       {/* Header con props condicionales */}
       <Header/>
 
@@ -19,6 +19,7 @@ const MainLayout = () => {
       </main>
 
       {/* Footer condicional */}
+      
       {!isLoginPage && !isRegisterPage && <Footer />}
     </div>
   )

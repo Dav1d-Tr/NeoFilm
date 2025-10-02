@@ -4,6 +4,9 @@ import AdminHeader from "./AdminHeader";
 
 const AdminLayout = () => {
   const location = useLocation();
+
+  // Reglas según la ruta actual
+
   return (
     <div>
       {/* Header del admin */}

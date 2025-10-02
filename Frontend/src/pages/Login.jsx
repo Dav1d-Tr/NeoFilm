@@ -39,14 +39,21 @@ const Login = () => {
       );
 
       if (user) {
-        // Guardamos sesión
+        // Guardamos sesión (incluyendo rol)
         login({
           id: user.id,
           nombre: user.name,
           apellido: user.lastName,
           email: user.email,
+          roleId: user.roleId, // 👈 Guardamos el rol también
         });
-        navigate("/"); // Redirige a Home
+
+        // Redirigir según rol
+        if (user.roleId === 1) {
+          navigate("/"); // Cliente
+        } else {
+          navigate("/admin"); // Admin
+        }
       } else {
         alert("Email o contraseña incorrectos ❌");
       }

@@ -13,14 +13,14 @@ const AdminDashboard = () => {
           text="Administra La Sección De Películas"
           infoButton="Ver Movies"
           icono={faPhotoFilm}
-          link="cartelera"
+          link="manageMovies"
         ></GuideCard>
         <GuideCard
           title="Manage Snacks"
           text="Administra La Sección De Snacks"
           infoButton="Ver Snacks"
           icono={faCookieBite}
-          link="comida"
+          link="manageSnacks"
         ></GuideCard>
         </div>
         <div className="text-center px-5 sm:text-start flex justify-center-center sm:items-start gap-2 sm:gap-4 justify-center">
@@ -29,14 +29,14 @@ const AdminDashboard = () => {
           text="Agregar Una Nueva Movie"
           infoButton="Add Movie"
           icono={faFileVideo}
-          link="cartelera"
+          link="manageMovies"
         ></GuideCard>
         <GuideCard
           title="New Snacks"
           text="Agregar Un Nuevo Snack"
           infoButton="Add Snack"
           icono={faPizzaSlice}
-          link="comida"
+          link="newSnacks"
         ></GuideCard>
         </div>
       </section>

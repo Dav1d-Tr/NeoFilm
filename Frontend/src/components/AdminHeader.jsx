@@ -17,7 +17,7 @@ const Header = () => {
     <header className="w-full bg-black fixed top-0 z-20 sm:px-20 sm:py-0.5">
       <div className="w-full px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/">
+        <Link to="/admin">
           <div className="flex items-center gap-2 text-white font-bold text-xl">
             <img src="/img/logo.png" alt="NeoFilm Logo" className="h-10 sm:h-16" />
             <strong className="text-2xl sm:text-4xl font-serif">Neo.Admin</strong>
@@ -78,28 +78,33 @@ const Header = () => {
 
         {/* Botones o usuario logueado */}
         <div className="hidden sm:flex gap-3 items-center">
-          {user =>
-            <div className="relative">
-              <button
-                onClick={() => setMenuOpen(prev => !prev)}
-                className="px-4 py-2 bg-purple-700 rounded text-white"
-              >
-                {user.nombre} {user.apellido}
-              </button>
+  {user ? (
+    <div className="relative">
+      <button
+        onClick={() => setMenuOpen(prev => !prev)}
+        className="px-4 py-2 bg-purple-700 rounded text-white"
+      >
+        {user.nombre} {user.apellido}
+      </button>
 
-              {menuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg z-50">
-                  <button
-                    onClick={() => { logout(); setMenuOpen(false); }}
-                    className="w-full text-left px-4 py-2 hover:bg-gray-200"
-                  >
-                    Cerrar sesión
-                  </button>
-                </div>
-              )}
-            </div>
-          }
+      {menuOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg z-50">
+          <button
+            onClick={() => { logout(); setMenuOpen(false); }}
+            className="w-full text-left px-4 py-2 hover:bg-gray-200"
+          >
+            Cerrar sesión
+          </button>
         </div>
+      )}
+    </div>
+  ) : (
+    <Link to="/login">
+      <Button text="Iniciar sesión" />
+    </Link>
+  )}
+</div>
+
       </div>
 
       {/* MENÚ DESPLEGABLE EN MÓVIL */}

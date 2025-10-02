@@ -52,7 +52,7 @@ const ManageSnacks = () => {
     navigate(`/admin/snacks/edit/${snackId}`);
   };
 
-  if (loading) return <p className="text-white text-xl mt-20">Cargando categorías...</p>;
+  if (loading) return <p className="text-white text-xl mt-32 text-center">Cargando categorías...</p>;
   if (error) return <p className="text-red-500 mt-20">{error}</p>;
 
   return (

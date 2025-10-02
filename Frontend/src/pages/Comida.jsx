@@ -32,7 +32,7 @@ const Comida = () => {
   }, []);
 
   if (loading) {
-    return <p className="text-white text-xl mt-20">Cargando categorías...</p>;
+    return <p className="text-white text-xl mt-36 text-center">Cargando categorías...</p>;
   }
 
   return (

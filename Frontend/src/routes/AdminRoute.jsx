@@ -9,8 +9,8 @@ const AdminRoute = ({ children }) => {
   // Si no hay sesión, va al login
   if (!user) return <Navigate to="/login" replace />;
 
-  // Si no es admin, lo mandamos al home
-  if (user.rol !== "administrador") return <Navigate to="/" replace />;
+  // Si el usuario no es admin (ej: suponiendo que roleId === 2 es admin)
+  if (user.roleId !== 2) return <Navigate to="/" replace />;
 
   return children;
 };
