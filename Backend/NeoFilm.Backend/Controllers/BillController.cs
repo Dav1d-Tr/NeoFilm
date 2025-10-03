@@ -68,6 +68,7 @@ namespace NeoFilm.Backend.Controllers
                 return BadRequest(ModelState);
 
 
+
             var user = await _context.Users.FindAsync(model.UserId.ToString());
             if (user == null)
                 return BadRequest("Usuario no encontrado.");
@@ -75,10 +76,11 @@ namespace NeoFilm.Backend.Controllers
             var bill = new Bill
             {
                 Date = model.Date,
-                Total = model.Total,
+                
                 UserId = model.UserId,
                 PaymentId = model.PaymentId
             };
+
 
             var action = await _unit.AddAsync(bill);
             if (!action.WasSuccess)
@@ -128,6 +130,9 @@ método de pago: {savedBill.Payment.Name} <br />
                     emailBody
                 );
             }
+           
+
+
 
             return Ok(savedBill);
         }

@@ -46,6 +46,12 @@ builder.Services.AddScoped<IFilmsUnitOfWork, FilmsUnitOfWork>();
 
 builder.Services.AddScoped<IMovieTheaterRepository, MovieTheaterRepository>();
 builder.Services.AddScoped<IMovieTheaterUnitOfWork, MovieTheaterUnitOfWork>();
+
+builder.Services.AddScoped<ITicketsRepository, TicketsRepository>();
+builder.Services.AddScoped<ITicketsUnitOfWork, TicketsUnitOfWork>();
+
+builder.Services.AddScoped<ISnacksDetailRespositoy, SnacksDetailRepository>();
+builder.Services.AddScoped<ISnacksDetailUnitOfWork, SnackDetailsUnitOfWork>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",

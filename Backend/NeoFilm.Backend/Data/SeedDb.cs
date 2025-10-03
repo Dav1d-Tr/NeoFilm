@@ -31,6 +31,8 @@ namespace NeoFilm.Backend.Data
             await CheckPaymentsAsync();
             await CheckBillsAsync();
             await CheckFunctionsAsync();
+            await CheckTicketsAsync();
+            await CheckSnacksDetailAsync();
         }
 
         private async Task CheckFunctionsAsync()
@@ -231,15 +233,15 @@ namespace NeoFilm.Backend.Data
         {
             if (!_context.Bill.Any())
             {
-                var bill = new Bill
+                var Bill = new Bill
                 {
                     Date = DateTime.Now,
-                    Total = 100000,
+                    
                     UserId = 1,
                     PaymentId = 1
                 };
 
-                _context.Bill.Add(bill);
+                _context.Bill.Add(Bill);
                 await _context.SaveChangesAsync();
             }
         }
@@ -349,5 +351,25 @@ namespace NeoFilm.Backend.Data
             await _context.SaveChangesAsync();
         }
 
+        private async Task CheckTicketsAsync()
+        {
+            if (!_context.Tickets.Any())
+            {
+                _context.Tickets.Add(new Ticket { BillId=1, FunctionId=1, SeatId=1, Price=20000, Description="pelicula" });
+                
+            }
+
+            await _context.SaveChangesAsync();
+        }
+        private async Task CheckSnacksDetailAsync()
+        {
+            if (!_context.SnacksDetails.Any())
+            {
+                _context.SnacksDetails.Add(new SnacksDetail { BillId = 1, SnackId=1, Quantity=2, subtotal=1000});
+
+            }
+
+            await _context.SaveChangesAsync();
+        }
     }
 }

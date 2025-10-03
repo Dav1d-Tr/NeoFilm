@@ -9,5 +9,6 @@ namespace NeoFilm.Backend.Respositories.Interfaces
         Task<ActionResponse<Bill>> GetAsync(int id);
 
         Task<ActionResponse<IEnumerable<Bill>>> GetAsync();
+        Task<ActionResponse<Bill>> UpdateTotalAsync(int billId);
     }
 }

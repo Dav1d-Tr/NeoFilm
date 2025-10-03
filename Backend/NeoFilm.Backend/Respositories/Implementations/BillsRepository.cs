@@ -20,7 +20,14 @@ namespace NeoFilm.Backend.Respositories.Implementations
         {var bills = await _context.Bill
                 .Include(b => b.User)
                 .Include(b => b.Payment)
+                .Include(b => b.SnacksDetails)
+                    .ThenInclude(sd => sd.Snack)
+                .Include(b => b.Tickets)
+                    
                 .ToListAsync();
+
+
+
             return new ActionResponse<IEnumerable<Bill>>
             {
                 WasSuccess = true,
@@ -32,7 +39,10 @@ namespace NeoFilm.Backend.Respositories.Implementations
         {
             var bill = await _context.Bill
                 .Include(b => b.User)
-    .Include(b => b.Payment)
+                .Include(b => b.Payment)
+                .Include(b => b.SnacksDetails)
+                    .ThenInclude(sd => sd.Snack)
+                .Include(b => b.Tickets)
     .FirstOrDefaultAsync(b => b.Id == id);
 
             if (bill == null)
@@ -49,6 +59,46 @@ namespace NeoFilm.Backend.Respositories.Implementations
                 {
                     WasSuccess = true,
                     Result = bill
+                };
+            }
+        }
+
+        public async Task<ActionResponse<Bill>> UpdateTotalAsync(int billId)
+        {
+            var bill = await _context.Bill
+                .Include(b => b.SnacksDetails)
+                .Include(b => b.Tickets)
+                .FirstOrDefaultAsync(b => b.Id == billId);
+
+            if (bill == null)
+            {
+                return new ActionResponse<Bill>
+                {
+                    WasSuccess = false,
+                    Message = "Factura no encontrada."
+                };
+            }
+
+            var snacksTotal = bill.SnacksDetails?.Sum(sd => sd.subtotal) ?? 0m;
+            var ticketsTotal = bill.Tickets?.Sum(t => t.Price) ?? 0m;
+
+            bill.Total = snacksTotal + ticketsTotal;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+                return new ActionResponse<Bill>
+                {
+                    WasSuccess = true,
+                    Result = bill
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ActionResponse<Bill>
+                {
+                    WasSuccess = false,
+                    Message = ex.Message
                 };
             }
         }

@@ -19,5 +19,6 @@ namespace NeoFilm.Backend.UnitsOfWork.Implementations
 
         public override async Task<ActionResponse<IEnumerable<Bill>>> GetAsync() => await _billsrepository.GetAsync();   
         public override async Task<ActionResponse<Bill>> GetAsync(int id) => await _billsrepository.GetAsync(id);
+        public async Task<ActionResponse<Bill>> UpdateTotalAsync(int billId) => await _billsrepository.UpdateTotalAsync(billId);
     }
 }

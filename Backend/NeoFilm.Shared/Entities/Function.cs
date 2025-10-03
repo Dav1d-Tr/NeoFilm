@@ -33,5 +33,6 @@ namespace NeoFilm.Shared.Entities
 
         public int MovieTheaterId { get; set; }
         public MovieTheater? MovieTheater { get; set; }
+        public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }

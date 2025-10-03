@@ -24,7 +24,9 @@ namespace NeoFilm.Backend.Data
         public DbSet<Venue> Venues { get; set; }
         public DbSet<MovieTheater> MovieTheaters { get; set; }
         public DbSet<Seat> Seats { get; set; }
-        
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<SnacksDetail> SnacksDetails { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -43,6 +45,9 @@ namespace NeoFilm.Backend.Data
             modelBuilder.Entity<MovieTheater>().HasIndex(x => new { x.Id, x.Name }).IsUnique();
             modelBuilder.Entity<Seat>().Property(c => c.Status).HasConversion<string>();
             DisableCascadeDelete(modelBuilder);
+            modelBuilder.Entity<Ticket>()
+    .HasIndex(t => new { t.FunctionId, t.SeatId })
+    .IsUnique();
         }
 
         private void DisableCascadeDelete(ModelBuilder modelBuilder)

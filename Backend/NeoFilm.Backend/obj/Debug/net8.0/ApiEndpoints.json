@@ -90,6 +90,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "NeoFilm.Backend.Controllers.CategorieFilmsController",
+    "Method": "GetAsync",
+    "RelativePath": "api/CategorieFilms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.CategorieFilms, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PostAsync",
+    "RelativePath": "api/CategorieFilms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.CategorieFilms",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.CategorieFilms, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PutAsync",
+    "RelativePath": "api/CategorieFilms",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.CategorieFilms",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.CategorieFilmsController",
+    "Method": "GetAsync",
+    "RelativePath": "api/CategorieFilms/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.CategorieFilms, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/CategorieFilms/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NeoFilm.Backend.Controllers.CategorieSnacksController",
     "Method": "GetAsync",
     "RelativePath": "api/CategorieSnacks",
@@ -225,6 +299,228 @@
     "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.DocumentType, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "DeleteAsync",
     "RelativePath": "api/DocumentType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.FilmController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Film",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Film, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PostAsync",
+    "RelativePath": "api/Film",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.Film",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Film, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PutAsync",
+    "RelativePath": "api/Film",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.Film",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.FilmController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Film/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Film, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Film/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.FormatController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Format",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Format, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PostAsync",
+    "RelativePath": "api/Format",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.Format",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Format, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PutAsync",
+    "RelativePath": "api/Format",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.Format",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.FormatController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Format/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Format, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Format/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.FunctionController",
+    "Method": "PostAsync",
+    "RelativePath": "api/Function",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "function",
+        "Type": "NeoFilm.Shared.Entities.Function",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Function, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAsync",
+    "RelativePath": "api/Function",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Function, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PutAsync",
+    "RelativePath": "api/Function",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.Function",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Function, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAsync",
+    "RelativePath": "api/Function/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Function, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Function/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -595,6 +891,170 @@
     "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Snacks, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "DeleteAsync",
     "RelativePath": "api/Snacks/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.SnacksDetailController",
+    "Method": "GetAsync",
+    "RelativePath": "api/SnacksDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.SnacksDetail, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PostAsync",
+    "RelativePath": "api/SnacksDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.SnacksDetail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.SnacksDetail, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PutAsync",
+    "RelativePath": "api/SnacksDetail",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.SnacksDetail",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.SnacksDetailController",
+    "Method": "GetAsync",
+    "RelativePath": "api/SnacksDetail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.SnacksDetail, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/SnacksDetail/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.SnacksDetailController",
+    "Method": "PostAsync",
+    "RelativePath": "api/SnacksDetail/CreateWithDto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "NeoFilm.Shared.Dtos.SnacksDetailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TicketController",
+    "Method": "PostAsync",
+    "RelativePath": "api/Ticket",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Ticket",
+        "Type": "NeoFilm.Shared.Entities.Ticket",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TicketController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Ticket",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Ticket, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "PutAsync",
+    "RelativePath": "api/Ticket",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.Ticket",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TicketController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Ticket/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.GenericController\u00601[[NeoFilm.Shared.Entities.Ticket, NeoFilm.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Ticket/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
