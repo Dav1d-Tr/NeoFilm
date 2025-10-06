@@ -7,15 +7,15 @@ public class TicketsFactory : ProductFactory
     private readonly int _Function;
     private readonly int _Seat;
     private readonly decimal _Price;
-   
+    private readonly string _description;
 
-    public TicketsFactory(int Bill, int Function, int Seat, decimal Price )
+    public TicketsFactory(int Bill, int Function, int Seat, decimal Price, string Description )
     {
         _Bill = Bill;
         _Function = Function;
         _Seat = Seat;
         _Price = Price;
-       
+        _description = Description;
     }
 
     public override IProducto CrearProducto()
@@ -25,7 +25,8 @@ public class TicketsFactory : ProductFactory
             BillId = _Bill,
             FunctionId = _Function,
             SeatId = _Seat,
-            Price = _Price
+            Price = _Price,
+            Description= _description
 
         };
         

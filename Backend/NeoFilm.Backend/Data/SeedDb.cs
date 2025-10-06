@@ -31,7 +31,7 @@ namespace NeoFilm.Backend.Data
             await CheckPaymentsAsync();
             await CheckBillsAsync();
             await CheckFunctionsAsync();
-            await CheckTicketsAsync();
+           
             await CheckSnacksDetailAsync();
         }
 

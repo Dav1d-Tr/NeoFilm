@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NeoFilm.Backend.Repositories.Interfaces;
 using NeoFilm.Backend.UnitsOfWork.Interfaces;
+using NeoFilm.Shared.Dtos;
 using NeoFilm.Shared.Entities;
+using System.Net.Sockets;
 
 namespace NeoFilm.Backend.Controllers
 {
@@ -18,14 +20,24 @@ namespace NeoFilm.Backend.Controllers
             _ticketsUnitOfWork = ticketsUnitOfWork;
         }
 
-        [HttpPost]
-        public override async Task<IActionResult> PostAsync([FromBody] Ticket Ticket)
+        [HttpPost("DTO")]
+        public async Task<IActionResult> PostAsync(TicketDTO dto)
         {
 
-            var factory = new TicketsFactory(Ticket.FunctionId, Ticket.BillId, Ticket.SeatId, Ticket.Price);
+            var factory = new TicketsFactory(dto.FunctionId, dto.BillId,dto.SeatId, dto.Price, dto.Description);
             var TicketCreado = (Ticket)factory.CrearProducto();
 
-            var result = await _unitOfWork.AddAsync(TicketCreado);
+            var ticketDtoResult = new TicketDTO
+            {
+                
+                BillId = TicketCreado.BillId,
+                FunctionId = TicketCreado.FunctionId,
+                SeatId = TicketCreado.SeatId,
+                Price = TicketCreado.Price,
+                Description= TicketCreado.Description
+            };
+
+            var result = await _ticketsUnitOfWork.AddAsync(ticketDtoResult);
 
             if (!result.WasSuccess)
             {
@@ -57,5 +69,17 @@ namespace NeoFilm.Backend.Controllers
             }
             return NotFound();
         }
+
+        [HttpDelete("{id}")]
+        public override async Task<IActionResult> DeleteAsync(int id)
+        {
+            var action = await _ticketsUnitOfWork.DeleteAsync(id);
+            if (action.WasSuccess)
+            {
+                return NoContent();
+            }
+            return BadRequest(action.Message);
+        }
+
     }
 }

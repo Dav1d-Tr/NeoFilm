@@ -1,6 +1,9 @@
-﻿using NeoFilm.Backend.Repositories.Interfaces;
+﻿using Microsoft.AspNetCore.Mvc;
+using NeoFilm.Backend.Repositories.Interfaces;
+using NeoFilm.Backend.Respositories.Implementations;
 using NeoFilm.Backend.Respositories.Interfaces;
 using NeoFilm.Backend.UnitsOfWork.Interfaces;
+using NeoFilm.Shared.Dtos;
 using NeoFilm.Shared.Entities;
 using NeoFilm.Shared.Responses;
 
@@ -18,6 +21,8 @@ namespace NeoFilm.Backend.UnitsOfWork.Implementations
         }
         public override async Task<ActionResponse<IEnumerable<Ticket>>> GetAsync() => await _ticketsRepository.GetAsync();
         public override async Task<ActionResponse<Ticket>> GetAsync(int id) => await _ticketsRepository.GetAsync(id);
+        public virtual async Task<ActionResponse<Ticket>> AddAsync(TicketDTO dto) => await _ticketsRepository.AddAsync(dto);
+        public override async Task<ActionResponse<Ticket>> DeleteAsync(int id) => await _ticketsRepository.DeleteAsync(id);
 
 
     }

@@ -1549,7 +1549,48 @@
         }
       }
     },
+    "/api/Ticket/DTO": {
+      "post": {
+        "tags": [
+          "Ticket"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Ticket": {
+      "get": {
+        "tags": [
+          "Ticket"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Ticket"
@@ -1573,16 +1614,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Ticket"
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -2500,6 +2531,39 @@
           },
           "seat": {
             "$ref": "#/components/schemas/Seat"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TicketDTO": {
+        "required": [
+          "billId",
+          "description",
+          "functionId",
+          "price",
+          "seatId"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "billId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "functionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
