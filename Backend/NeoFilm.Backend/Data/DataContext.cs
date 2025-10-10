@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NeoFilm.Shared.CarEntities;
 using NeoFilm.Shared.Entities;
 using System.Diagnostics.Metrics;
 
@@ -27,6 +28,8 @@ namespace NeoFilm.Backend.Data
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<SnacksDetail> SnacksDetails { get; set; }
         public DbSet<TemporalCar> TemporalCars{ get; set; }
+        public DbSet<TemporalTicket> TemporalTickets { get; set; }
+        public DbSet<TemporalSnacksDetail> TemporalSnacksDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

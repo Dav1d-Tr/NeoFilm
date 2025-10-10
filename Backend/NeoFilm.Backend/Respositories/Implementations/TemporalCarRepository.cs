@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NeoFilm.Backend.Data;
 using NeoFilm.Backend.Repositories.Interfaces;
 using NeoFilm.Backend.Respositories.Interfaces;
+using NeoFilm.Shared.CarEntities;
 using NeoFilm.Shared.Dtos;
 using NeoFilm.Shared.Entities;
 using NeoFilm.Shared.Responses;
@@ -52,8 +53,8 @@ namespace NeoFilm.Backend.Respositories.Implementations
         public async Task<ActionResponse<Bill>> CreateBillAsync(int carritoId, int paymentId)
         {
             var carrito = await _context.TemporalCars
-                .Include(c => c.Ticket)
-                .Include(c => c.SnacksDetail)
+                .Include(c => c.Tickets)
+                .Include(c => c.TemporalSnacksDetail)
                 .Include(c => c.User)
                 .FirstOrDefaultAsync(c => c.Id == carritoId);
 
@@ -62,6 +63,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
                 return new ActionResponse<Bill> { WasSuccess = false, Message = "Carrito vacío o no encontrado" };
             }
 
+      
             var factura = new Bill
             {
                 UserId = carrito.UserId,
@@ -69,40 +71,56 @@ namespace NeoFilm.Backend.Respositories.Implementations
                 Date = DateTime.UtcNow,
                 PaymentId = paymentId
             };
+
             _context.Bill.Add(factura);
             await _context.SaveChangesAsync();
-            foreach (var snack in carrito.SnacksDetail)
+
+
+            foreach (var temporalSnack in carrito.TemporalSnacksDetail)
             {
-                snack.BillId = factura.Id;
-                _context.SnacksDetails.Update(snack);
+                var snack = new SnacksDetail
+                {
+                    SnackId = temporalSnack.SnackId,
+                    Quantity = temporalSnack.Quantity,
+                    subtotal = temporalSnack.Subtotal,
+                    BillId = factura.Id
+                };
+
+                _context.SnacksDetails.Add(snack);
             }
 
-            foreach (var ticket in carrito.Ticket)
+            foreach (var temporalTicket in carrito.Tickets)
             {
-                ticket.BillId = factura.Id;
-                _context.Tickets.Update(ticket);
+                var ticket = new Ticket
+                {
+                    Description = temporalTicket.Description,
+                    Price = temporalTicket.Price,
+                    FunctionId = temporalTicket.FunctionId,
+                    SeatId = temporalTicket.SeatId,
+                    BillId = factura.Id
+                };
+
+                _context.Tickets.Add(ticket);
             }
+
             await _context.SaveChangesAsync();
+
             var facturaCompleta = await _context.Bill
-       .Include(b => b.snacksDetails).ThenInclude(sd => sd.Snack)
-       .Include(b => b.Tickets).ThenInclude(t => t.Seat)
-       .Include(b => b.Payment)
-       .Include(b => b.User)
-       .FirstOrDefaultAsync(b => b.Id == factura.Id);
+                .Include(b => b.snacksDetails).ThenInclude(sd => sd.Snack)
+                .Include(b => b.Tickets).ThenInclude(t => t.Seat)
+                .Include(b => b.Payment)
+                .Include(b => b.User)
+                .FirstOrDefaultAsync(b => b.Id == factura.Id);
+
             if (facturaCompleta?.User != null)
             {
                 await SendBillEmailAsync(facturaCompleta, facturaCompleta.User);
             }
 
-
-
+          
             await ClearCarAsync(carritoId);
 
-
-
-            await _context.SaveChangesAsync();
-
-            return new ActionResponse<Bill> { WasSuccess = true, Result = factura };
+            return new ActionResponse<Bill> { WasSuccess = true, Result = facturaCompleta };
         }
 
 
@@ -111,8 +129,8 @@ namespace NeoFilm.Backend.Respositories.Implementations
             try
             {
                 var carrito = await _context.TemporalCars
-                    .Include(c => c.Ticket)
-                    .Include(c => c.SnacksDetail)
+                    .Include(c => c.Tickets)
+                    .Include(c => c.TemporalSnacksDetail)
                     .FirstOrDefaultAsync(c => c.Id == carritoId);
 
                 if (carrito == null)
@@ -124,8 +142,9 @@ namespace NeoFilm.Backend.Respositories.Implementations
                     };
                 }
 
-                _context.Tickets.RemoveRange(carrito.Ticket);
-                _context.SnacksDetails.RemoveRange(carrito.SnacksDetail);
+
+                _context.TemporalSnacksDetails.RemoveRange(carrito.TemporalSnacksDetail);
+                _context.TemporalTickets.RemoveRange(carrito.Tickets);
 
                 carrito.Total = 0; 
 
@@ -155,8 +174,8 @@ namespace NeoFilm.Backend.Respositories.Implementations
                 WasSuccess = true,
                 Result = await _entity
                 .Include(r => r.User)
-                .Include(c => c.Ticket)
-                .Include(c => c.SnacksDetail).ToListAsync()
+                .Include(c => c.Tickets)
+                .Include(c => c.TemporalSnacksDetail).ToListAsync()
             };
         }
         public async Task<ActionResponse<TemporalCar>> UpdateAsync(TemporalCar entity)
@@ -164,8 +183,8 @@ namespace NeoFilm.Backend.Respositories.Implementations
             try
             {
                 var carrito = await _context.TemporalCars
-                    .Include(c => c.Ticket)
-                    .Include(c => c.SnacksDetail)
+                    .Include(c => c.Tickets)
+                    .Include(c => c.TemporalSnacksDetail)
                     .FirstOrDefaultAsync(c => c.Id == entity.Id);
 
                 if (carrito == null)
@@ -222,14 +241,16 @@ namespace NeoFilm.Backend.Respositories.Implementations
         public async Task RecalcularTotalAsync(int carritoId)
         {
             var carrito = await _context.Set<TemporalCar>()
-                .Include(c => c.Ticket)
-                .Include(c => c.SnacksDetail)
+                .Include(c => c.Tickets)
+                .Include(c => c.TemporalSnacksDetail)
                 .ThenInclude(sd => sd.Snack)
                 .FirstOrDefaultAsync(c => c.Id == carritoId);
 
             if (carrito != null)
             {
-                carrito.Total = carrito.Ticket.Sum(t => t.Price) + carrito.SnacksDetail.Sum(c => c.subtotal);
+                carrito.Total =
+    carrito.Tickets.Sum(t => t.Price) +
+    carrito.TemporalSnacksDetail.Sum(s => s.Subtotal);
                 await _context.SaveChangesAsync();
             }
         }
@@ -240,9 +261,9 @@ namespace NeoFilm.Backend.Respositories.Implementations
             {
               
                 var carrito = await _context.TemporalCars
-                    .Include(c => c.SnacksDetail)
+                    .Include(c => c.TemporalSnacksDetail)
                     
-                    .Include(c => c.Ticket)
+                    .Include(c => c.Tickets)
                     .FirstOrDefaultAsync(c => c.Id == carritoId);
 
                 if (carrito == null)
@@ -268,24 +289,23 @@ namespace NeoFilm.Backend.Respositories.Implementations
                     };
                 }
 
-                
-                var detalle = new SnacksDetail
+
+                var detalle = new TemporalSnacksDetail
                 {
                     SnackId = snack.SnackId,
                     Quantity = snack.Quantity,
-                    subtotal = snack.Quantity * snacks.UnitValue
+                    Subtotal = snack.Quantity * snacks.UnitValue
                 };
 
-              
-                carrito.SnacksDetail.Add(detalle);
+                carrito.TemporalSnacksDetail.Add(detalle);
 
 
                 await RecalcularTotalAsync(carritoId);
 
           
                 var carritoActualizado = await _context.TemporalCars
-                    .Include(c => c.SnacksDetail)
-                    .Include(c => c.Ticket)
+                    .Include(c => c.TemporalSnacksDetail)
+                    .Include(c => c.Tickets)
                     .FirstOrDefaultAsync(c => c.Id == carritoId);
                 
 
@@ -305,15 +325,13 @@ namespace NeoFilm.Backend.Respositories.Implementations
             }
         }
 
-        public async Task<ActionResponse<TemporalCar>> AddTicketsAsync(int carritoId, [FromBody]TicketDTO ticket)
+        public async Task<ActionResponse<TemporalCar>> AddTicketsAsync(int carritoId, [FromBody] TicketDTO ticketDto)
         {
             try
             {
-
                 var carrito = await _context.TemporalCars
-                    .Include(c => c.SnacksDetail)
-
-                    .Include(c => c.Ticket)
+                    .Include(c => c.TemporalSnacksDetail)
+                    .Include(c => c.Tickets)
                     .FirstOrDefaultAsync(c => c.Id == carritoId);
 
                 if (carrito == null)
@@ -325,34 +343,28 @@ namespace NeoFilm.Backend.Respositories.Implementations
                     };
                 }
 
-
-
-
-                var detalle = new Ticket
+                var nuevoTicket = new TemporalTicket
                 {
-                    Description = ticket.Description,
-                    Price = ticket.Price,
-                    FunctionId = ticket.FunctionId,
-                    SeatId = ticket.SeatId,
-                   
+                    Description = ticketDto.Description,
+                    Price = ticketDto.Price,
+                    FunctionId = ticketDto.FunctionId,
+                    SeatId = ticketDto.SeatId,
+                    TemporalCarId = carrito.Id
                 };
 
+                carrito.Tickets.Add(nuevoTicket);
+                carrito.Total = carrito.TemporalSnacksDetail.Sum(s => s.Subtotal) + carrito.Tickets.Sum(t => t.Price);
 
-                carrito.Ticket.Add(detalle);
-
-
-                await RecalcularTotalAsync(carritoId);
-
+                await _context.SaveChangesAsync();
 
                 var carritoActualizado = await _context.TemporalCars
-                    .Include(c => c.SnacksDetail)
-                    .ThenInclude(sd => sd.Snack)
-                    .Include(c => c.Ticket)
-                    
+                    .Include(c => c.TemporalSnacksDetail)
+                        .ThenInclude(sd => sd.Snack)
+                    .Include(c => c.Tickets)
+                        .ThenInclude(t => t.Function)
+                    .Include(c => c.Tickets)
+                        .ThenInclude(t => t.Seat)
                     .FirstOrDefaultAsync(c => c.Id == carritoId);
-             
-
-                
 
                 return new ActionResponse<TemporalCar>
                 {

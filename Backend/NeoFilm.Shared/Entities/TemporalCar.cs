@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeoFilm.Shared.CarEntities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,8 +17,8 @@ namespace NeoFilm.Shared.Entities
 
         public User? User { get; set; }
 
-        public ICollection<Ticket> Ticket { get; set; } = new List<Ticket>();
-        public ICollection<SnacksDetail> SnacksDetail { get; set; } = new List<SnacksDetail>();
+        public ICollection<TemporalTicket> Tickets { get; set; } = new List<TemporalTicket>();
+        public ICollection<TemporalSnacksDetail> TemporalSnacksDetail { get; set; } = new List<TemporalSnacksDetail>();
         public decimal Total { get; set; } = 0;
         [Display(Name = "comentarios")]
         public string? comments { get; set; } 

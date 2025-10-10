@@ -1046,3 +1046,5 @@ C:\MICHEL\sistem information\NeoFilm\Backend\NeoFilm.Backend\obj\Debug\net8.0\re
 C:\MICHEL\sistem information\NeoFilm\Backend\NeoFilm.Backend\obj\Debug\net8.0\NeoFilm.Backend.pdb
 C:\MICHEL\sistem information\NeoFilm\Backend\NeoFilm.Backend\obj\Debug\net8.0\NeoFilm.Backend.genruntimeconfig.cache
 C:\MICHEL\sistem information\NeoFilm\Backend\NeoFilm.Backend\obj\Debug\net8.0\ref\NeoFilm.Backend.dll
+C:\MICHEL\NeoFilm\Backend\NeoFilm.Backend\bin\Debug\net8.0\QRCoder.dll
+C:\MICHEL\NeoFilm\Backend\NeoFilm.Backend\bin\Debug\net8.0\zxing.dll

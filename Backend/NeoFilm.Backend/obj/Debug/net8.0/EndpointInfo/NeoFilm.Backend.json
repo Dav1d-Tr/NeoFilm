@@ -2693,17 +2693,17 @@
           "user": {
             "$ref": "#/components/schemas/User"
           },
-          "ticket": {
+          "tickets": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Ticket"
+              "$ref": "#/components/schemas/TemporalTicket"
             },
             "nullable": true
           },
-          "snacksDetail": {
+          "temporalSnacksDetail": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SnacksDetail"
+              "$ref": "#/components/schemas/TemporalSnacksDetail"
             },
             "nullable": true
           },
@@ -2714,6 +2714,89 @@
           "comments": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TemporalSnacksDetail": {
+        "required": [
+          "quantity",
+          "snackId",
+          "temporalCarId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "snackId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "snack": {
+            "$ref": "#/components/schemas/Snacks"
+          },
+          "temporalCarId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temporalCar": {
+            "$ref": "#/components/schemas/TemporalCar"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subtotal": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TemporalTicket": {
+        "required": [
+          "description",
+          "functionId",
+          "price",
+          "seatId",
+          "temporalCarId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "functionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "function": {
+            "$ref": "#/components/schemas/Function"
+          },
+          "seatId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seat": {
+            "$ref": "#/components/schemas/Seat"
+          },
+          "temporalCarId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temporalCar": {
+            "$ref": "#/components/schemas/TemporalCar"
           }
         },
         "additionalProperties": false
