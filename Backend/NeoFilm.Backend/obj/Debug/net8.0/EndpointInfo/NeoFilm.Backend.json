@@ -1549,6 +1549,197 @@
         }
       }
     },
+    "/api/TemporalCar": {
+      "get": {
+        "tags": [
+          "TemporalCar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TemporalCar/{id}": {
+      "put": {
+        "tags": [
+          "TemporalCar"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemporalCar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemporalCar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemporalCar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TemporalCar/crear orden": {
+      "post": {
+        "tags": [
+          "TemporalCar"
+        ],
+        "parameters": [
+          {
+            "name": "carritoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "paymentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TemporalCar/{carritoId}/clear": {
+      "delete": {
+        "tags": [
+          "TemporalCar"
+        ],
+        "parameters": [
+          {
+            "name": "carritoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TemporalCar/{carritoId}/add-snack": {
+      "post": {
+        "tags": [
+          "TemporalCar"
+        ],
+        "parameters": [
+          {
+            "name": "carritoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SnacksDetailDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SnacksDetailDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SnacksDetailDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TemporalCar/{carritoId}/add-ticket": {
+      "post": {
+        "tags": [
+          "TemporalCar"
+        ],
+        "parameters": [
+          {
+            "name": "carritoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Ticket/DTO": {
       "post": {
         "tags": [
@@ -1941,8 +2132,8 @@
             "format": "double"
           },
           "userId": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "paymentId": {
             "type": "integer",
@@ -2420,7 +2611,7 @@
           "categorieSnacks": {
             "$ref": "#/components/schemas/CategorieSnacks"
           },
-          "tickets": {
+          "snacksDetails": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SnacksDetail"
@@ -2432,7 +2623,6 @@
       },
       "SnacksDetail": {
         "required": [
-          "billId",
           "quantity",
           "snackId"
         ],
@@ -2451,7 +2641,8 @@
           },
           "billId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "bill": {
             "$ref": "#/components/schemas/Bill"
@@ -2469,17 +2660,12 @@
       },
       "SnacksDetailDTO": {
         "required": [
-          "billId",
           "quantity",
           "snackId"
         ],
         "type": "object",
         "properties": {
           "snackId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "billId": {
             "type": "integer",
             "format": "int32"
           },
@@ -2490,9 +2676,50 @@
         },
         "additionalProperties": false
       },
+      "TemporalCar": {
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "ticket": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ticket"
+            },
+            "nullable": true
+          },
+          "snacksDetail": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SnacksDetail"
+            },
+            "nullable": true
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Ticket": {
         "required": [
-          "billId",
           "functionId",
           "price",
           "seatId"
@@ -2513,7 +2740,8 @@
           },
           "billId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "bill": {
             "$ref": "#/components/schemas/Bill"
@@ -2537,7 +2765,6 @@
       },
       "TicketDTO": {
         "required": [
-          "billId",
           "description",
           "functionId",
           "price",
@@ -2552,10 +2779,6 @@
           "price": {
             "type": "number",
             "format": "double"
-          },
-          "billId": {
-            "type": "integer",
-            "format": "int32"
           },
           "functionId": {
             "type": "integer",
@@ -2640,6 +2863,9 @@
           },
           "documentType": {
             "$ref": "#/components/schemas/DocumentType"
+          },
+          "temporalCar": {
+            "$ref": "#/components/schemas/TemporalCar"
           },
           "bills": {
             "type": "array",

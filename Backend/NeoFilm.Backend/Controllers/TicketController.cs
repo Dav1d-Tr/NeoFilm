@@ -5,6 +5,7 @@ using NeoFilm.Shared.Dtos;
 using NeoFilm.Shared.Entities;
 using System.Net.Sockets;
 
+
 namespace NeoFilm.Backend.Controllers
 {
     [ApiController]
@@ -24,17 +25,18 @@ namespace NeoFilm.Backend.Controllers
         public async Task<IActionResult> PostAsync(TicketDTO dto)
         {
 
-            var factory = new TicketsFactory(dto.FunctionId, dto.BillId,dto.SeatId, dto.Price, dto.Description);
+            var factory = new TicketsFactory(dto.FunctionId,dto.SeatId, dto.Price, dto.Description);
             var TicketCreado = (Ticket)factory.CrearProducto();
 
             var ticketDtoResult = new TicketDTO
             {
                 
-                BillId = TicketCreado.BillId,
+               
                 FunctionId = TicketCreado.FunctionId,
                 SeatId = TicketCreado.SeatId,
                 Price = TicketCreado.Price,
-                Description= TicketCreado.Description
+                Description= TicketCreado.Description,
+               
             };
 
             var result = await _ticketsUnitOfWork.AddAsync(ticketDtoResult);

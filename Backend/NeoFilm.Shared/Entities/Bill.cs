@@ -13,12 +13,13 @@ namespace NeoFilm.Shared.Entities
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public decimal Total { get; set; } = 0;
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int PaymentId { get; set; }
         public Payments? Payment { get; set; }
         public User? User { get; set; }
         public ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
-        public ICollection<SnacksDetail> SnacksDetails { get; set; } = new List<SnacksDetail>();
+        public ICollection<SnacksDetail> snacksDetails { get; set; } = new List<SnacksDetail>();
+
 
     }
 }

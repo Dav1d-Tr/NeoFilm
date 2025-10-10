@@ -12,10 +12,7 @@ namespace NeoFilm.Shared.Dtos
 
         [Required]
         public int SnackId { get; set; }
-
-        [Required]
-        public int BillId { get; set; }
-
+ 
         [Required]
         public int Quantity { get; set; }
     }

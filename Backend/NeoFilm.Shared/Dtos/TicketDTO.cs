@@ -15,10 +15,11 @@ namespace NeoFilm.Shared.Dtos
         [Required]
         public decimal Price { get; set; }
         [Required]
-        public int BillId { get; set; }
-        [Required]
+      
         public int FunctionId { get; set; }
         [Required]
         public int SeatId { get; set; }
+        
+
     }
 }

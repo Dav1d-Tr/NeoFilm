@@ -66,7 +66,7 @@ namespace NeoFilm.Shared.Entities
 
         public Role? Role { get; set; }
         public DocumentType? DocumentType { get; set; }
-
+        public TemporalCar? TemporalCar { get; set; }
         public ICollection<Bill>? Bills { get; set; }
     }
 }

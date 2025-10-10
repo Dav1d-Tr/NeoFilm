@@ -20,7 +20,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
         {var bills = await _context.Bill
                 .Include(b => b.User)
                 .Include(b => b.Payment)
-                .Include(b => b.SnacksDetails)
+                .Include(b => b.snacksDetails)
                     .ThenInclude(sd => sd.Snack)
                 .Include(b => b.Tickets)
                     
@@ -40,7 +40,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
             var bill = await _context.Bill
                 .Include(b => b.User)
                 .Include(b => b.Payment)
-                .Include(b => b.SnacksDetails)
+                .Include(b => b.snacksDetails)
                     .ThenInclude(sd => sd.Snack)
                 .Include(b => b.Tickets)
     .FirstOrDefaultAsync(b => b.Id == id);
@@ -66,7 +66,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
         public async Task<ActionResponse<Bill>> UpdateTotalAsync(int billId)
         {
             var bill = await _context.Bill
-                .Include(b => b.SnacksDetails)
+                .Include(b => b.snacksDetails)
                 .Include(b => b.Tickets)
                 .FirstOrDefaultAsync(b => b.Id == billId);
 
@@ -79,7 +79,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
                 };
             }
 
-            var snacksTotal = bill.SnacksDetails?.Sum(sd => sd.subtotal) ?? 0m;
+            var snacksTotal = bill.snacksDetails?.Sum(sd => sd.subtotal) ?? 0m;
             var ticketsTotal = bill.Tickets?.Sum(t => t.Price) ?? 0m;
 
             bill.Total = snacksTotal + ticketsTotal;

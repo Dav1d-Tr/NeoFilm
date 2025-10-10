@@ -994,6 +994,116 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "NeoFilm.Backend.Controllers.TemporalCarController",
+    "Method": "GetAsync",
+    "RelativePath": "api/TemporalCar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TemporalCarController",
+    "Method": "AddSnackAsync",
+    "RelativePath": "api/TemporalCar/{carritoId}/add-snack",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "snack",
+        "Type": "NeoFilm.Shared.Dtos.SnacksDetailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TemporalCarController",
+    "Method": "AddTicketAsync",
+    "RelativePath": "api/TemporalCar/{carritoId}/add-ticket",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ticket",
+        "Type": "NeoFilm.Shared.Dtos.TicketDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TemporalCarController",
+    "Method": "ClearCartAsync",
+    "RelativePath": "api/TemporalCar/{carritoId}/clear",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TemporalCarController",
+    "Method": "UpdateCartAsync",
+    "RelativePath": "api/TemporalCar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "NeoFilm.Shared.Entities.TemporalCar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NeoFilm.Backend.Controllers.TemporalCarController",
+    "Method": "CreateBillAsync",
+    "RelativePath": "api/TemporalCar/crear orden",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "paymentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NeoFilm.Backend.Controllers.TicketController",
     "Method": "GetAsync",
     "RelativePath": "api/Ticket",

@@ -13,12 +13,14 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
 {
     private readonly DataContext _context;
     private readonly IBillsRepository _repository;
+    private readonly ITemporalCarRepository _car;
     private readonly DbSet<Ticket> _entity;
 
-    public TicketsRepository(DataContext context, IBillsRepository repository) : base(context)
+    public TicketsRepository(DataContext context, IBillsRepository repository, ITemporalCarRepository car) : base(context)
     {
         _context = context;
         _repository = repository;
+        _car = car;
         _entity = context.Set<Ticket>();
     }
 
@@ -27,7 +29,7 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
         var Tickets = await _context.Tickets
             .Include(b => b.Function)
             .Include(b => b.Seat)
-            .Include(b => b.Bill)
+            
             .ToListAsync();
         return new ActionResponse<IEnumerable<Ticket>>
         {
@@ -41,7 +43,7 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
         var Ticket = await _context.Tickets
             .Include(b => b.Function)
             .Include(b => b.Seat)
-            .Include(b => b.Bill)
+           
             .FirstOrDefaultAsync(b => b.Id == id);
 
 
@@ -67,15 +69,7 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
     public virtual async Task<ActionResponse<Ticket>> AddAsync(TicketDTO dto)
        
     {
-        var bill = await _context.Bill.FindAsync(dto.BillId);
-        if(bill== null)
-        {
-            return new ActionResponse<Ticket>
-            {
-                WasSuccess = false,
-                Message = "Factura no encontrada."
-            };
-        }
+        
         var seat = await _context.Seats.FindAsync(dto.SeatId);
         if (seat == null)
         {
@@ -89,16 +83,17 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
         var detail = new Ticket
         {
             Price = dto.Price,
-            BillId = dto.BillId,
+           
             Description = dto.Description,
             FunctionId = dto.FunctionId,
-            SeatId = dto.SeatId
-
+            SeatId = dto.SeatId,
+           
         };
         _context.Tickets.Add(detail);
         try
         {
-            await _repository.UpdateTotalAsync(dto.BillId);
+           
+           
 
             await _context.SaveChangesAsync();
             return new ActionResponse<Ticket>
@@ -116,7 +111,7 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
             return ExceptionActionResponse(exception);
         }
     }
-
+    
     public override async Task<ActionResponse<Ticket>> DeleteAsync(int id)
     {
         var row = await _entity.FindAsync(id);
@@ -132,7 +127,8 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
         try
         {
             _entity.Remove(row);
-            await _repository.UpdateTotalAsync(row.BillId);
+            
+
             await _context.SaveChangesAsync();
             return new ActionResponse<Ticket>
             {
@@ -148,6 +144,7 @@ public class TicketsRepository : GenericRepository<Ticket>, ITicketsRepository
             };
         }
     }
+
     private ActionResponse<Ticket> ExceptionActionResponse(Exception exception)
     {
         return new ActionResponse<Ticket>

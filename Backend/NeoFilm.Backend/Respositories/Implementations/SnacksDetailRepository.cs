@@ -12,11 +12,13 @@ namespace NeoFilm.Backend.Respositories.Implementations
     {
         private readonly DataContext _context;
         private readonly IBillsRepository _repository;
+        private readonly ITemporalCarRepository _car;
 
-        public SnacksDetailRepository(DataContext context, IBillsRepository repository) : base(context)
+        public SnacksDetailRepository(DataContext context, IBillsRepository repository, ITemporalCarRepository car) : base(context)
         {
             _context = context;
             _repository = repository;
+            _car = car;
         }
 
         public async Task<ActionResponse<SnacksDetail>> AddAsync(SnacksDetailDTO dto)
@@ -30,20 +32,12 @@ namespace NeoFilm.Backend.Respositories.Implementations
                     Message = "Snack no encontrado."
                 };
             }
-            var bill = await _context.Bill.FindAsync(dto.BillId);
-            if (bill == null)
-            {
-                return new ActionResponse<SnacksDetail>
-                {
-                    WasSuccess = false,
-                    Message = "Factura no encontrada."
-                };
-
-            }
+            
             var detail = new SnacksDetail
             {
                 SnackId = dto.SnackId,
-                BillId = dto.BillId,
+                
+
                 Quantity = dto.Quantity,
                 subtotal = dto.Quantity * snack.UnitValue
             };
@@ -54,8 +48,9 @@ namespace NeoFilm.Backend.Respositories.Implementations
 
             try
             {
+                
                 await _context.SaveChangesAsync();
-                await _repository.UpdateTotalAsync(dto.BillId);
+      
                 return new ActionResponse<SnacksDetail>
                 {
                     WasSuccess = true,
@@ -75,7 +70,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
         {
             var SnacksDetails = await _context.SnacksDetails
                 .Include(b => b.Snack)
-                .Include(b => b.Bill)
+
                 .ToListAsync();
             foreach (var detail in SnacksDetails)
             {
@@ -92,7 +87,7 @@ namespace NeoFilm.Backend.Respositories.Implementations
         {
             var SnacksDetail = await _context.SnacksDetails
                 .Include(b => b.Snack)
-                .Include(b => b.Bill)
+
                 .FirstOrDefaultAsync(b => b.Id == id);
 
 

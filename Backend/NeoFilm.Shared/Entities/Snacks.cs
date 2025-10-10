@@ -23,6 +23,6 @@ namespace NeoFilm.Shared.Entities
         public int CategorieSnacksId { get; set; }
         public CategorieSnacks? CategorieSnacks { get; set; }
         public string GetDescripcion() => $"Snack: {Name}, precio: {UnitValue}";
-        public ICollection<SnacksDetail> Tickets { get; set; } = new List<SnacksDetail>();
+        public ICollection<SnacksDetail> SnacksDetails { get; set; } = new List<SnacksDetail>();
     }
 }

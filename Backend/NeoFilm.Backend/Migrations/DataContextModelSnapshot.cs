@@ -378,6 +378,108 @@ namespace NeoFilm.Backend.Migrations
                     b.ToTable("Snacks");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.SnacksDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("BillId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SnackId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("subtotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BillId");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("SnackId");
+
+                    b.ToTable("SnacksDetails");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.TemporalCar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("TemporalCars");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Ticket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("BillId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FunctionId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("SeatId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BillId");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("SeatId");
+
+                    b.HasIndex("FunctionId", "SeatId")
+                        .IsUnique();
+
+                    b.ToTable("Tickets");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -553,6 +655,74 @@ namespace NeoFilm.Backend.Migrations
                     b.Navigation("CategorieSnacks");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.SnacksDetail", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.Bill", "Bill")
+                        .WithMany("snacksDetails")
+                        .HasForeignKey("BillId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("NeoFilm.Shared.Entities.TemporalCar", "Car")
+                        .WithMany("SnacksDetail")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("NeoFilm.Shared.Entities.Snacks", "Snack")
+                        .WithMany("SnacksDetails")
+                        .HasForeignKey("SnackId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Bill");
+
+                    b.Navigation("Car");
+
+                    b.Navigation("Snack");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.TemporalCar", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Ticket", b =>
+                {
+                    b.HasOne("NeoFilm.Shared.Entities.Bill", "Bill")
+                        .WithMany("Tickets")
+                        .HasForeignKey("BillId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("NeoFilm.Shared.Entities.TemporalCar", "Car")
+                        .WithMany("Ticket")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("NeoFilm.Shared.Entities.Function", "Function")
+                        .WithMany("Tickets")
+                        .HasForeignKey("FunctionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("NeoFilm.Shared.Entities.Seat", "Seat")
+                        .WithMany("Tickets")
+                        .HasForeignKey("SeatId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Bill");
+
+                    b.Navigation("Car");
+
+                    b.Navigation("Function");
+
+                    b.Navigation("Seat");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.User", b =>
                 {
                     b.HasOne("NeoFilm.Shared.Entities.DocumentType", "DocumentType")
@@ -570,6 +740,13 @@ namespace NeoFilm.Backend.Migrations
                     b.Navigation("DocumentType");
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Bill", b =>
+                {
+                    b.Navigation("Tickets");
+
+                    b.Navigation("snacksDetails");
                 });
 
             modelBuilder.Entity("NeoFilm.Shared.Entities.CategorieFilms", b =>
@@ -597,6 +774,11 @@ namespace NeoFilm.Backend.Migrations
                     b.Navigation("Functions");
                 });
 
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Function", b =>
+                {
+                    b.Navigation("Tickets");
+                });
+
             modelBuilder.Entity("NeoFilm.Shared.Entities.MovieTheater", b =>
                 {
                     b.Navigation("Functions");
@@ -612,6 +794,23 @@ namespace NeoFilm.Backend.Migrations
             modelBuilder.Entity("NeoFilm.Shared.Entities.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Seat", b =>
+                {
+                    b.Navigation("Tickets");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.Snacks", b =>
+                {
+                    b.Navigation("SnacksDetails");
+                });
+
+            modelBuilder.Entity("NeoFilm.Shared.Entities.TemporalCar", b =>
+                {
+                    b.Navigation("SnacksDetail");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("NeoFilm.Shared.Entities.User", b =>

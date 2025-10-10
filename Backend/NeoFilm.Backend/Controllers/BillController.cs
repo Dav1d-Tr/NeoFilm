@@ -77,7 +77,7 @@ namespace NeoFilm.Backend.Controllers
             {
                 Date = model.Date,
                 
-                UserId = model.UserId,
+                UserId = model.UserId.ToString(),
                 PaymentId = model.PaymentId
             };
 
@@ -94,43 +94,6 @@ namespace NeoFilm.Backend.Controllers
                 savedBill = reload.Result;
 
 
-
-            if (!string.IsNullOrWhiteSpace(user.Email))
-            {
-                string qrData = $"FACTURA_{savedBill.Id}";
-                string qrUrl = $"https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={Uri.EscapeDataString(qrData)}";
-
-                var emailBody = $@"
-    <html>
-        <body style='font-family: Arial, sans-serif; color: #333;'>
-            <h2 style='color: #4CAF50;'>Factura Registrada</h2>
-            <p>Hola <strong>{user.Name}</strong>,</p>
-            <p>Tu orden <strong>#{savedBill.Id}</strong> fue registrada exitosamente.</p>
-<p>
-  <strong>
-    Resumen:<br />
-método de pago: {savedBill.Payment.Name} <br />
-    Total: {savedBill.Total}
-  </strong>
-</p>
-            
-<p>Cuando vayas a una de nuestras sedes muestra el siguiente correo para recibir tus prodctos</p>
-<img src='{qrUrl}' alt='Código QR' style='margin: 20px 0;'/>
-            <p>Gracias por confiar en nosotros.</p>
-<p>Neofilm-Colombia.</p>
-
-            <hr />
-            <p style='font-size: 0.9em; color: #777;'>Este es un correo automático, por favor no respondas.</p>
-        </body>
-    </html>";
-
-                await _emailService.SendEmailAsync(
-                    user.Email,
-                    "Factura registrada",
-                    emailBody
-                );
-            }
-           
 
 
 

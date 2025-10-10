@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeoFilm.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+783295491ccd9bb959dcaf4f63b85dd3b6aaa65e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9293c852825045a728891c298ea0e0ff359a2e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeoFilm.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeoFilm.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

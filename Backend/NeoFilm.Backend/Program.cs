@@ -52,6 +52,10 @@ builder.Services.AddScoped<ITicketsUnitOfWork, TicketsUnitOfWork>();
 
 builder.Services.AddScoped<ISnacksDetailRespositoy, SnacksDetailRepository>();
 builder.Services.AddScoped<ISnacksDetailUnitOfWork, SnackDetailsUnitOfWork>();
+
+builder.Services.AddScoped<ITemporalCarRepository, TemporalCarRepository>();
+builder.Services.AddScoped<ITemporalCarUnitOfWork, TemporalCarUnitOfWork>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",

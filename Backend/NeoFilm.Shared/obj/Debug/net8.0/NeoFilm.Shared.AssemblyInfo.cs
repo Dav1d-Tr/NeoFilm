@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeoFilm.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+783295491ccd9bb959dcaf4f63b85dd3b6aaa65e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9293c852825045a728891c298ea0e0ff359a2e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeoFilm.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeoFilm.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

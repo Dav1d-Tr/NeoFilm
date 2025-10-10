@@ -29,9 +29,9 @@ namespace NeoFilm.Backend.Data
             await CheckSnacksAsync();
             await CheckUsersAsync();
             await CheckPaymentsAsync();
-            await CheckBillsAsync();
+      
+          
             await CheckFunctionsAsync();
-           
             await CheckSnacksDetailAsync();
         }
 
@@ -237,7 +237,7 @@ namespace NeoFilm.Backend.Data
                 {
                     Date = DateTime.Now,
                     
-                    UserId = 1,
+                    UserId = "1045864864",
                     PaymentId = 1
                 };
 
@@ -261,7 +261,8 @@ namespace NeoFilm.Backend.Data
                     ValidatePassword = "Secure123!",
                     PhoneNumber = "3001234567",
                     DocumentTypeId = 1,
-                    RoleId = 1
+                    RoleId = 1,
+                    TemporalCar= new TemporalCar { Total = 0, comments = "detalles" }
                 });
 
                 _context.Users.Add(new User
@@ -269,13 +270,14 @@ namespace NeoFilm.Backend.Data
                     Id = "1025645873",
                     Name = "David",
                     LastName = "Rozo",
-                    Email = "ddavid.rozod@gmail.com",
-                    ValidateEmail = "ddavid.rozod@gmail.com",
+                    Email = "juan@gmail.com",
+                    ValidateEmail = "juan@gmail.com",
                     Password = "Da1025645873*",
                     ValidatePassword = "Da1025645873*",
                     PhoneNumber = "3045599449",
                     DocumentTypeId = 1,
-                    RoleId = 2
+                    RoleId = 2,
+                    TemporalCar = new TemporalCar { Total = 0, comments = "detalles" }
                 });
             }
 
@@ -355,7 +357,7 @@ namespace NeoFilm.Backend.Data
         {
             if (!_context.Tickets.Any())
             {
-                _context.Tickets.Add(new Ticket { BillId=1, FunctionId=1, SeatId=1, Price=20000, Description="pelicula" });
+                _context.Tickets.Add(new Ticket { FunctionId=1, SeatId=1, Price=20000, Description="pelicula" });
                 
             }
 
@@ -365,7 +367,17 @@ namespace NeoFilm.Backend.Data
         {
             if (!_context.SnacksDetails.Any())
             {
-                _context.SnacksDetails.Add(new SnacksDetail { BillId = 1, SnackId=1, Quantity=2, subtotal=1000});
+                _context.SnacksDetails.Add(new SnacksDetail { SnackId=1, Quantity=2, subtotal=1000});
+
+            }
+
+            await _context.SaveChangesAsync();
+        }
+        private async Task CheckCarAsync()
+        {
+            if (!_context.TemporalCars.Any())
+            {
+                _context.TemporalCars.Add(new TemporalCar { UserId = "1", Total = 0, comments = "detalles" });
 
             }
 

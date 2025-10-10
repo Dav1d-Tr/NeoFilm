@@ -26,6 +26,7 @@ namespace NeoFilm.Backend.Data
         public DbSet<Seat> Seats { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<SnacksDetail> SnacksDetails { get; set; }
+        public DbSet<TemporalCar> TemporalCars{ get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +36,10 @@ namespace NeoFilm.Backend.Data
             modelBuilder.Entity<Role>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<User>().HasIndex(c => c.Email).IsUnique();
             modelBuilder.Entity<User>().HasIndex(c => c.PhoneNumber).IsUnique();
+            modelBuilder.Entity<User>().HasOne(u => u.TemporalCar)
+        .WithOne(c => c.User)
+        .HasForeignKey<TemporalCar>(c => c.UserId) 
+        .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<DocumentType>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<CategorieSnacks>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<CategorieFilms>().HasIndex(c => c.Name).IsUnique();
